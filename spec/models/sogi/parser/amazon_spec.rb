@@ -21,10 +21,13 @@ describe Sogi::Parser::Amazon do
     @order.order_id.should eql("050-1234567-1234567")
   end
 
-  it "should have custom order data and know the merchant id" do
+  it "should have custom order data" do
     # @order.custom_data.should have_at_least(1).items
-    # @order.amazon_merchant_identifier.should eql("My Store")
     pending "figuring out how custom data will work"
+  end
+
+  it "should know the merchant id" do
+    @parser.merchant_identifier.should eql("My Store")
   end
 
   it "should have information about dates" do

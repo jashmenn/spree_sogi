@@ -4,11 +4,23 @@ require 'ostruct'
 # abstract class
 class Sogi::OrderParser
 
+  module XmlParsingClasMethods
+    # attr_at_xpath :order_id, "/AmazonOrderID"
+    # then the custom data fields just specify what you want to go into custom data,
+    # by default calls the method of the same key name
+    def attr_at_xpath(symbol, xpath)
+      define_method symbol do
+        value_of xpath
+      end
+    end
+  end
+
   # helper methods for easy parsing of the document
-  module XmlParsingHelperMethods
+  module XmlParsingInstanceMethods
     # a path to always search when using "value_of"
     def value_of_prefix; ""; end
 
+    # returns the inner html of a given xpath
     def value_of(xpath)
       found_elem = @document.at(value_of_prefix + xpath)
       return nil unless found_elem
@@ -17,12 +29,14 @@ class Sogi::OrderParser
     alias_method :v, :value_of
   end
 
+
   # thin object to represent a particular order contained in the document
   class Order
-    include XmlParsingHelperMethods
+    include XmlParsingInstanceMethods
     attr_accessor :document
 
     class << self
+      include XmlParsingClasMethods
       # def add_custom_data(key, xpath)
       #   @@custom_data ||= {}
       #   @@custom_data[key] = xpath
@@ -57,19 +71,23 @@ class Sogi::OrderParser
       ret
     end
 
-
   end
 
   class LineItem
-    include XmlParsingHelperMethods
+    class << self
+      include XmlParsingClasMethods
+    end
+
+    include XmlParsingInstanceMethods
     attr_accessor :document
   end
 
-  include XmlParsingHelperMethods
+  include XmlParsingInstanceMethods
   attr_accessor :body
   attr_accessor :document
 
   class << self
+    include XmlParsingClasMethods
 
     # def custom_order_data(key, xpath)
     #   Order.add_custom_data(key, xpath)
