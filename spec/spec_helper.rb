@@ -18,6 +18,8 @@ if File.directory?(File.dirname(__FILE__) + "/matchers")
   Dir[File.dirname(__FILE__) + "/matchers/*.rb"].each {|file| require file }
 end
 
+SOGI_FIXTURES_PATH = File.dirname(__FILE__) + "/fixtures" unless defined? SOGI_FIXTURES_PATH
+
 Spec::Runner.configure do |config|
   # config.use_transactional_fixtures = true
   # config.use_instantiated_fixtures  = false

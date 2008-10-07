@@ -1,5 +1,7 @@
 # Uncomment this if you reference any of your controllers in activate
 require_dependency 'application'
+$:.unshift File.dirname(__FILE__) + "/lib"
+require 'extensions/object.rb'
 
 class SogiExtension < Spree::Extension
   version "1.0"

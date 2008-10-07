@@ -15,7 +15,8 @@ show, update, or delete commands. However, if someone believes it would be
 useful, feel free to write it and submit a pull request on github. 
 
 == Requirements
-Requires the spree custom_order_data extension (to be released).
+ * spree custom_order_data extension (to be released).
+ * <strike>REXML</strike> hpricot
 
 == Friends
 It is designed to be used with the amazon_merchant gem. However, this gem is not required. (alpha version ready, soon to be released)
