@@ -12,5 +12,7 @@ describe Sogi::OrderParser do
     @order_parser.should_not be_nil 
   end
 
+  # todo, test the meta actions of this class
+
 end
 

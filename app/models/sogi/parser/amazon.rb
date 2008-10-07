@@ -36,13 +36,13 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
  
     attr_at_xpath :shipping_name,         "/FulfillmentData/Address/Name"
     attr_at_xpath :shipping_address_one,  "/FulfillmentData/Address/AddressFieldOne"
+    attr_at_xpath :shipping_address_two,  "/FulfillmentData/Address/AddressFieldTwo" # does this even exist?
     attr_at_xpath :shipping_city,         "/FulfillmentData/Address/City"
     attr_at_xpath :shipping_state,        "/FulfillmentData/Address/StateOrRegion"
     attr_at_xpath :shipping_zip,          "/FulfillmentData/Address/PostalCode"
     attr_at_xpath :shipping_country,      "/FulfillmentData/Address/CountryCode"
     attr_at_xpath :shipping_phone,        "/FulfillmentData/Address/PhoneNumber"
   end
-
 
   define_line_item_methods_as do
     attr_at_xpath :order_code,    "/AmazonOrderItemCode"
@@ -56,7 +56,6 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
     def shipping_price ; price_method("Shipping")    ; end
     def tax            ; price_method("Tax")         ; end
     def shipping_tax   ; price_method("ShippingTax") ; end
-
 
     def price_method(looking_for)
       price_elements = @document.search("/ItemPrice/Component")
