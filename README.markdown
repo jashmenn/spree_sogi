@@ -20,7 +20,6 @@ Requires the spree custom_order_data extension (to be released).
 == Friends
 It is designed to be used with the amazon_merchant gem. However, this gem is not required. (alpha version ready, soon to be released)
 
-
 == My notes
 TODO, move these into a new file once we start making releases.
 
@@ -42,7 +41,6 @@ the parser should just turn the orders into spree objects.
 
 what we dont want to do is leave the db in a half-baked state. 
 
-
 ... 
 when parsing xml
 the assumption is that the order is all a subelement of a particular element
@@ -53,4 +51,40 @@ element where you can find your data will be.
 So there is a parser,
 then something else takes the parser and actually creates the objects based on it. 
 
-what is a good name for it. 
+what is a good name for it? Sogi::OrderCreator 
+The OrderCreator calls methods on the Parser which, in turn, returns the
+values. The OrderCreator deals with all the transaction based stuff.
+
+what if you want to do validation? validate it in code. raise an exception and return that in the xml
+
+return an xml response. what should the xml response look like? make a general xml exception catcher
+
+So, to recap
+
+1) something POST's xml -> OrderGatewayInputController
+2) OrderGatewayInputController creates a new Sogi::OrderParser based on the class name of the input format variable. If it cant find it, raise an exception
+3) The parser is passed to an Sogi::OrderCreator
+4) The order_creator, in a safe, transaction way deals with the messyness of creating the objects in a transaction safe way, creates any custom variables
+   and returns a Spree order object. 
+5) the controller sets @order, and renders the view
+6) if something fails, it should raise a specific exception, the view should render an XML page (if XML was requested) outlining the error message
+
+use #rescue_from - it looks useful:
+
+  class ApplicationController < ActionController::Base
+    rescue_from User::NotAuthorized, :with => :deny_access # self defined exception
+    rescue_from ActiveRecord::RecordInvalid, :with => :show_errors
+
+    rescue_from 'MyAppError::Base' do |exception|
+      render :xml => exception, :status => 500
+    end
+
+    protected
+      def deny_access
+        ...
+      end
+
+      def show_errors(exception)
+        exception.record.new_record? ? ...
+      end
+  end
