@@ -10,53 +10,77 @@ class Sogi::OrderParser
     def value_of_prefix; ""; end
 
     def value_of(xpath)
-      @document.at(value_of_prefix + xpath).inner_html
+      found_elem = @document.at(value_of_prefix + xpath)
+      return nil unless found_elem
+      found_elem.inner_html
     end
     alias_method :v, :value_of
   end
 
   # thin object to represent a particular order contained in the document
-  class Order < OpenStruct
-    attr_accessor :document
+  class Order
     include XmlParsingHelperMethods
+    attr_accessor :document
 
     class << self
-      def add_custom_data(key, xpath)
-        @@custom_data ||= {}
-        @@custom_data[key] = xpath
+      # def add_custom_data(key, xpath)
+      #   @@custom_data ||= {}
+      #   @@custom_data[key] = xpath
 
-        define_method key do
-          read_custom_data(key)
-        end
+      #   define_method key do
+      #     read_custom_data(key)
+      #   end
+      # end
+    end
+
+    # def initialize
+    #   super
+    # end
+
+    # def read_custom_data(key)
+    #   v(@@custom_data[key])
+    # end
+    # protected :read_custom_data
+
+    # def custom_data
+    #   @@custom_data ||= {}
+    # end
+
+    def line_items
+      ret = []
+      elements = @document.search self.line_items_found_in
+      elements.each do |element| 
+        li = LineItem.new
+        li.document = element
+        ret << li
       end
+      ret
     end
 
-    def initialize
-      super
-    end
 
-    def read_custom_data(key)
-      v(@@custom_data[key])
-    end
-    protected :read_custom_data
-
-    def custom_data
-      @@custom_data ||= {}
-    end
   end
 
+  class LineItem
+    include XmlParsingHelperMethods
+    attr_accessor :document
+  end
+
+  include XmlParsingHelperMethods
   attr_accessor :body
   attr_accessor :document
-  include XmlParsingHelperMethods
 
   class << self
 
-    def custom_order_data(key, xpath)
-      Order.add_custom_data(key, xpath)
-    end
+    # def custom_order_data(key, xpath)
+    #   Order.add_custom_data(key, xpath)
+    # end
 
     def define_order_methods_as(&block)
       Order.class_eval &block
+    end
+
+    def define_line_item_methods_as(&block)
+      LineItem.class_eval &block
     end
 
   end

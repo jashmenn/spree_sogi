@@ -59,7 +59,7 @@ describe Sogi::Parser::Amazon do
   end
 
   it "should have basic line item information" do
-    @line_item.order_code.should eql("12345678901234"
+    @line_item.order_code.should eql("12345678901234")
     @line_item.sku.should eql("1234")
     @line_item.title.should eql("Programming Perl, 3rd edition")
     @line_item.quantity.should eql(1)
