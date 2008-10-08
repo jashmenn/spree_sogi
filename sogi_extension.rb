@@ -2,6 +2,7 @@
 require_dependency 'application'
 $:.unshift File.dirname(__FILE__) + "/lib"
 require 'extensions/object.rb'
+require 'extensions/activerecord/find_or_do.rb'
 
 class SogiExtension < Spree::Extension
   version "1.0"
@@ -17,6 +18,14 @@ class SogiExtension < Spree::Extension
 
     Product.class_eval do
       named_scope :for_sku, lambda {|sku| { :include => :variants, :conditions => ["variants.sku = ?", "#{sku}"]}} # exact match for sku finder
+    end
+
+    LineItem.class_eval do
+      def sku
+        return nil unless variant
+        return nil unless s = variant.sku
+        return s
+      end
     end
   end
   

@@ -86,6 +86,8 @@ describe Sogi::OrderCreator do
   end
 
   it "should find_or_create a line-item's product appropriately" do
+    line_item = mock_line_item
+
     original_count = Product.find(:all).size
 
     # should create a product
@@ -99,29 +101,26 @@ describe Sogi::OrderCreator do
     product2.id.should eql(product.id)
   end
 
-  it "should have line items" do
-    pending "creating line items for unknown items"
+  it "should have line items with price and tax information" do
     line_items = @order.line_items
     line_items.should have_at_least(2).items
     item = line_items.first
     item.should_not be_nil
-    # assert stuff about the line items here
-    # taxes, shipping
-    # check quantities
-    # check prices
-    # check skus as well
+
+    item.price.to_d           .should eql(10.00.to_d)
+    item.ship_amount.to_d     .should eql(3.49.to_d)
+    item.tax_amount.to_d      .should eql(1.29.to_d)
+    item.ship_tax_amount.to_d .should eql(0.24.to_d)
+
+    item.quantity             .should eql(1)
+    item.sku                  .should eql("1234")
   end
 
-  it "should create needed tax zones" do
-    pending "making sure this is how you want to use it"  
-  end
-
-  it "should record the correct tax collected information" do
-    pending "seeing if there is a good place for it in the current database, then maybe adding it to the db"
-  end
+  #it "should create needed tax zones" do
+    # pending "making sure this is how you want to use it"  
+  #end
 
   notes = <<-EOF
-  once we get the line items and taxes, we are basically done! 
   then we just need to work on the controller being able to post this xml well
 
   then we need to setup phase three, tracking if this order has been sent to our fulfillment house or not

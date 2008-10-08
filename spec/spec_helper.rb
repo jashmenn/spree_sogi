@@ -20,6 +20,15 @@ end
 
 SOGI_FIXTURES_PATH = File.dirname(__FILE__) + "/fixtures" unless defined? SOGI_FIXTURES_PATH
 
+require 'bigdecimal'
+require 'bigdecimal/util'
+
+BigDecimal.class_eval do
+  def to_d
+    return self
+  end
+end
+
 Spec::Runner.configure do |config|
   # config.use_transactional_fixtures = true
   # config.use_instantiated_fixtures  = false

@@ -91,3 +91,11 @@ use #rescue_from - it looks useful:
   end
 
 TODO - add keys to custom order data
+
+== Things to add:
+MIGRATIONS TO ADD:
+ * orders - ship_tax?
+ * line_items - ship_amount, tax_amount, ship_tax_amount 
+
+NEW EXT:
+ * add order_properties

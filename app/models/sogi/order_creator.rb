@@ -75,9 +75,18 @@ should just add these into the order model anyway
       new_order.ship_address = shipping
   end
 
-  def create_order_line_items(order, new_order)
-    order.line_items.each do |parser_item|
-      # create the product if it doesn't exist
+  def create_order_line_items(parser_order, new_order)
+    parser_order.line_items.each do |parser_item|
+      product = find_or_create_product_for(parser_item)
+      variant = Variant.find(:first, :conditions => ["product_id = ? AND sku = ?", product.id, parser_item.sku])
+
+      line_item = LineItem.create(:variant_id => variant.id,
+                                  :quantity => parser_item.quantity,
+                                  :price => parser_item.price,
+                                  :ship_amount => parser_item.shipping_price,
+                                  :tax_amount => parser_item.tax,
+                                  :ship_tax_amount => parser_item.shipping_tax)
+      new_order.line_items << line_item
     end
 
 =begin
@@ -98,9 +107,20 @@ should just add these into the order model anyway
 
   # does this method belong here? maybe not
   def create_product_for(line_item)
-    product = Product.create(:name => line_item.title, :master_price => line_item.price, :description => line_item.title)
-    product.variants.create(:product_id => product.id, :sku => line_item.sku, :price => 0.0)
+    product = Product.create(:name => line_item.title, 
+                             :master_price => line_item.price, 
+                             :description => line_item.title)
+    product.variants.create(:product_id => product.id, :sku => line_item.sku, :price => line_item.price)
     product
+  end
+
+  def find_or_create_product_for(line_item)
+    products = Product.by_sku line_item.sku
+    if products.size > 0
+      return products.first
+    else
+      return create_product_for(line_item)
+    end
   end
 
 end
