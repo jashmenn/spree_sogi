@@ -14,10 +14,13 @@ class SogiExtension < Spree::Extension
 
   def activate
     # admin.tabs.add "Sogi", "/admin/sogi", :after => "Layouts", :visibility => [:all]
+
+    Product.class_eval do
+      named_scope :for_sku, lambda {|sku| { :include => :variants, :conditions => ["variants.sku = ?", "#{sku}"]}} # exact match for sku finder
+    end
   end
   
   def deactivate
     # admin.tabs.remove "Sogi"
   end
-  
 end

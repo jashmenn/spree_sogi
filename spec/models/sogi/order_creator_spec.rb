@@ -1,10 +1,25 @@
 require File.dirname(__FILE__) + '/../../spec_helper'
 
-describe Sogi::OrderCreator do
-  before(:each) do
-    mock_country = mock("country", :null_object => true)
-    # Country.should_receive(:find_by_iso).at_least(:once).and_return mock_country
+module OrderCreatorHelperMethods
+  def mock_line_item
+    line_item = stub("line_item",
+                     :order_code      => "1324",
+                     :sku             => "thesku",
+                     :title           => "mock parsed line item",
+                     :tax_code        => nil,
+                     :gift_message    => nil,
+                     :quantity        => 1,
+                     :price           => 20.00,
+                     :shipping_price  => 3.00,
+                     :tax             => 0.34,
+                     :shipping_tax    => 0.00)
+  end
+end
 
+describe Sogi::OrderCreator do
+  include OrderCreatorHelperMethods
+
+  before(:each) do
     @order_creator = Sogi::OrderCreator.new
     @order_creator.parser = @parser =  Sogi::Parser::Amazon.new(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample.xml"))
     @order = @order_creator.create_order(@parser.orders[0]) # just create the inital order so we can test it
@@ -55,8 +70,61 @@ describe Sogi::OrderCreator do
     ship_address.country.iso.should eql("US")
   end
 
-  it "should have line items" do
+  it "should create a product for an unknown line item" do
+    line_item = mock_line_item
+    line_item.should_not be_nil
+
+    original_count = Product.find(:all).size
+    @order_creator.send(:create_product_for, line_item)
+    Product.find(:all).should have_exactly(original_count + 1).products
+
+    products = Product.for_sku line_item.sku
+    product = products.first
+    product.should_not be_nil
+    product.name.should eql(line_item.title)
+    product.master_price.should eql(line_item.price)
   end
 
+  it "should find_or_create a line-item's product appropriately" do
+    original_count = Product.find(:all).size
+
+    # should create a product
+    product = @order_creator.send(:find_or_create_product_for, line_item)
+    Product.find(:all).should have_exactly(original_count + 1).products
+
+    # should find a product
+    product2 = @order_creator.send(:find_or_create_product_for, line_item)
+    Product.find(:all).should have_exactly(original_count + 1).products
+
+    product2.id.should eql(product.id)
+  end
+
+  it "should have line items" do
+    pending "creating line items for unknown items"
+    line_items = @order.line_items
+    line_items.should have_at_least(2).items
+    item = line_items.first
+    item.should_not be_nil
+    # assert stuff about the line items here
+    # taxes, shipping
+    # check quantities
+    # check prices
+    # check skus as well
+  end
+
+  it "should create needed tax zones" do
+    pending "making sure this is how you want to use it"  
+  end
+
+  it "should record the correct tax collected information" do
+    pending "seeing if there is a good place for it in the current database, then maybe adding it to the db"
+  end
+
+  notes = <<-EOF
+  once we get the line items and taxes, we are basically done! 
+  then we just need to work on the controller being able to post this xml well
+
+  then we need to setup phase three, tracking if this order has been sent to our fulfillment house or not
+  EOF
 
 end
