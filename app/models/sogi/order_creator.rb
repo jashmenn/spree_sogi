@@ -102,11 +102,11 @@ What to do w/ these? order custom?
   # custom fields in the PARSER and then define how to get that data. TODO
   # write this to use that
   def create_order_custom_data(porder, new_order)
-    new_order.properties.write :origin_channel,    @parser.origin_channel
-    new_order.properties.write :origin_account_id, @parser.merchant_identifier
-    new_order.properties.write :origin_id,         porder.order_id
-    new_order.properties.write :ordered_at,        porder.ordered_at
-    new_order.properties.write :posted_at,         porder.posted_at
+    # new_order.properties.write :origin_channel,    @parser.origin_channel
+    # new_order.properties.write :origin_account_id, @parser.merchant_identifier
+    # new_order.properties.write :origin_id,         porder.order_id
+    # new_order.properties.write :ordered_at,        porder.ordered_at
+    # new_order.properties.write :posted_at,         porder.posted_at
   end
 
   # does this method belong here? maybe not
