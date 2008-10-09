@@ -127,6 +127,13 @@ describe Sogi::OrderCreator do
     @order.posted_at.to_i.should eql(1020295309)  # "2002-05-01T15:21:49-08:00"
   end
 
+  it "should record information about fullfillment methods and service levels" do
+    pending "figuring out how to handle shipping information, is there an existing plugin?"
+    # <FulfillmentMethod>Ship</FulfillmentMethod>
+    # <FulfillmentServiceLevel>Standard</FulfillmentServiceLevel>
+  end
+              
+
   notes = <<-EOF
   then we just need to work on the controller being able to post this xml well
   then we need to setup phase three, tracking if this order has been sent to our fulfillment house or not

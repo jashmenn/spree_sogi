@@ -29,6 +29,12 @@ BigDecimal.class_eval do
   end
 end
 
+ActionController::TestResponse.class_eval do
+  def kind_of_success?
+   (200..299).include?(code.to_i)
+  end
+end
+
 Spec::Runner.configure do |config|
   config.use_transactional_fixtures = true
   # config.use_instantiated_fixtures  = false

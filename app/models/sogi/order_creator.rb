@@ -9,10 +9,17 @@ class Sogi::OrderCreator
 
   def create_orders!
     raise Error, "Need to set a parser before you can create orders." unless @parser
-    raise Error, "No orders found to parse" unless orders = @parser.orders
-    orders.each do |order|
-      create_order(order)
+    raise Error, "No orders found to parse" unless parser_orders = @parser.orders
+    # todo, should be able to handle split orders where some pass and some fail here
+    orders, errors = [], []
+    parser_orders.each do |order|
+      begin
+        orders << create_order(order)
+      rescue => e
+        errors << e
+      end
     end
+    [orders, errors]
   end
 
   def create_order(order)
@@ -36,15 +43,11 @@ class Sogi::OrderCreator
 
 =begin
 
-will be custom: 
-    merchant id 
 What to do w/ these? order custom?
 
     attr_at_xpath :fulfillment_method,    "/FulfillmentData/FulfillmentMethod"
     attr_at_xpath :fulfillment_level,     "/FulfillmentData/FulfillmentServiceLevel"
  
-  end
-
 =end
 
   private

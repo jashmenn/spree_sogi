@@ -101,6 +101,15 @@ class Sogi::OrderParser
       LineItem.class_eval &block
     end
 
+    def new_parser_for(parser_name)
+      begin
+        klass = "Sogi::Parser::#{parser_name.camelize}".constantize 
+        return klass.new
+      rescue NameError
+        return nil
+      end
+    end
+
   end
 
   def initialize(body=nil)

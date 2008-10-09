@@ -14,5 +14,14 @@ describe Sogi::OrderParser do
 
   # todo, test the meta actions of this class
 
+  it "should get an instance of a correct parser given a short name" do
+    parser = Sogi::OrderParser.new_parser_for("amazon")
+    parser.should_not be_nil
+    parser.should be_a_kind_of(Sogi::Parser::Amazon)
+
+    parser = Sogi::OrderParser.new_parser_for("asdfasdfasdf")
+    parser.should be_nil
+  end
+
 end
 
