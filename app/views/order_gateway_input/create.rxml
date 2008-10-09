@@ -1,1 +1,31 @@
-# xml goes here
+xml.instruct! 
+xml.response {
+
+  if @orders.size > 0
+    xml.success {
+      @orders.each do |order|
+        xml.order {
+          xml.id(order.id) 
+          xml.origin_id(order.origin_order_identifier)
+        }
+      end
+    }
+  end
+
+  if @errors.size  > 0
+    xml.errors {
+      @errors.each do |e|
+        # todo, write Exception#to_xml
+        xml.error {
+          xml.class(e.class)
+          xml.message(e.message)
+          if e.backtrace 
+            e.backtrace.each do |trace|
+              xml.trace(trace)
+            end
+          end
+        }
+      end
+    }
+  end
+}
