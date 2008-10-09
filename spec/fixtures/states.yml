@@ -1,0 +1,5 @@
+one:
+  id: 1
+  name: Washington
+  abbr: WA
+  country_id: 1

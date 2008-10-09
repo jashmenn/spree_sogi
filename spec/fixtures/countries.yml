@@ -1,0 +1,9 @@
+one:
+  id: 1
+  iso_name: UNITED STATES
+  iso: US
+  name: United States
+  iso3: USA
+  numcode: 840
+two:
+  id: 2

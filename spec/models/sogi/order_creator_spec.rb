@@ -118,11 +118,11 @@ describe Sogi::OrderCreator do
   end
 
   it "should store custom information such as origin_channel and origin_channel_id" do
-    @order.properties.read_value(:origin_channel).should eql("amazon")
-    @order.properties.read_value(:origin_account_id).should eql("My Store")
-    @order.properties.read_value(:origin_id).should eql("050-1234567-1234567")
-    @order.properties.read_value(:ordered_at).should eql("2002-05-01T15:20:15-08:00") # todo, should be a Time object
-    @order.properties.read_value(:posted_at).should eql("2002-05-01T15:21:49-08:00")  # todo, should be a Time object
+    @order.origin_channel.should eql("amazon")
+    @order.origin_account_id.should eql("My Store")
+    @order.origin_id.should eql("050-1234567-1234567")
+    @order.ordered_at.should eql("2002-05-01T15:20:15-08:00") # todo, should be a Time object
+    @order.posted_at.should eql("2002-05-01T15:21:49-08:00")  # todo, should be a Time object
   end
 
   notes = <<-EOF
@@ -131,16 +131,19 @@ describe Sogi::OrderCreator do
 
   ==
 
-
   okay, maybe we should create a new object: 
-  outside_order_properties
+  outside_order_attributes
     * :origin_channel .should eql("amazon")
     * :origin_account_identifier .should eql("My Store")
     * :origin_order_identifier).should eql("050-1234567-1234567")
     * :ordered_at .should eql("2002-05-01T15:20:15-08:00") # todo, should be a Time object
     * :posted_at .should eql("2002-05-01T15:21:49-08:00")  # todo, should be a Time object
+    * original file location
+    * order_id
  
   ok, we definitely should go this route. makes it much easier
+
+  for now, just change the read methods to full on methods so we can change them later
 
   should we go even further and create the origin channel as a full-on object? i dont want to get into that
   right now

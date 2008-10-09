@@ -267,8 +267,8 @@
     <Message>
         <MessageID>2</MessageID>
         <OrderReport>
-            <AmazonOrderID>050-1234567-1234567</AmazonOrderID>
-            <AmazonSessionID>902-1030835-1234567</AmazonSessionID>
+            <AmazonOrderID>050-1234567-1234560</AmazonOrderID>
+            <AmazonSessionID>902-1030835-1234560</AmazonSessionID>
             <OrderDate>2002-05-01T15:20:15-08:00</OrderDate>
             <OrderPostedDate>2002-05-01T15:21:49-08:00</OrderPostedDate>
             <BillingData>

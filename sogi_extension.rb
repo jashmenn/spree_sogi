@@ -27,6 +27,28 @@ class SogiExtension < Spree::Extension
         return s
       end
     end
+
+    Order.class_eval do
+      has_one :outside_order_attribute
+
+      # TODO these methods will be moved into a new object instead of being
+      # referenced from custom properties.  inspecting the custom properties
+      # themselves outside of this function is done at your own risk as this
+      # implementation will change, but the interface will not
+
+      %w{origin_channel origin_account_id origin_id}.each do |name|
+        define_method name do
+          properties.read_value(name)
+        end
+      end
+
+      %w{ordered_at posted_at}.each do |name|
+        define_method name do
+          # TODO make this return a Time object
+          properties.read_value(name)
+        end
+      end
+    end
   end
   
   def deactivate

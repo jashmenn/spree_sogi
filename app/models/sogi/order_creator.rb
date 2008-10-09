@@ -17,10 +17,13 @@ class Sogi::OrderCreator
 
   def create_order(order)
     Order.transaction do
-
       # check for existing order id, raise an exception
+      # you really shouldn't implement this until you get the order data. then you just use the validations
+      # in that object to test if we can create this object
+
       new_order = Order.create
 
+      create_and_verify_outside_order_attributes(order, new_order)
       create_order_billing_information(order, new_order)
       create_order_shipping_information(order, new_order)
       create_order_line_items(order, new_order)
@@ -47,20 +50,23 @@ What to do w/ these? order custom?
   private
 
   def create_order_billing_information(order, new_order)
+      shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
+
       # add billing information
       first, last = order.billing_name.split(/ /, 2)
       billing = Address.create(:firstname => first, 
                                :lastname => last, 
                                :phone => order.billing_phone_number, 
                                :email => order.billing_email,
-                               :country_id => Spree::Config[:default_country_id])
+                               :country_id => shipping_country.id)
       # attr_at_xpath :billing_email,         "/BillingData/BuyerEmailAddress"
       new_order.bill_address = billing
   end
 
   def create_order_shipping_information(order, new_order)
       # add shipping_information
-      shipping_country = Country.find_by_iso(order.shipping_country) || Spree::Config[:default_country_id]
+      shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
+      # state = State.find_or_create_by_name_and_country_id(order.shipping_state, shipping_country.id) # ... ?
       state = State.find_by_name(order.shipping_state)
     
       first, last = order.shipping_name.split(/ /, 2)
@@ -119,6 +125,22 @@ What to do w/ these? order custom?
     else
       return create_product_for(line_item)
     end
+  end
+
+  def create_and_verify_outside_order_attributes(porder, new_order)
+    ooa = OutsideOrderAttribute.create(
+      :origin_channel            => @parser.origin_channel,
+      :origin_account_identifier => @parser.merchant_identifier,
+      :origin_order_identifier   => porder.order_id,
+      :ordered_at                => porder.ordered_at,
+      :posted_at                 => porder.posted_at)
+    unless ooa.valid?
+      raise OrderAlreadyExistsError, 
+      "Order origin_id #{porder.order_id} for #{@parser.origin_channel} account #{@parser.merchant_identifier} already exists"
+    end
+    ooa.order = new_order
+    ooa.save
+    ooa
   end
 
 end
