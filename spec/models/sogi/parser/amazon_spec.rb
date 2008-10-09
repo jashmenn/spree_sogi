@@ -22,8 +22,7 @@ describe Sogi::Parser::Amazon do
   end
 
   it "should have custom order data" do
-    # @order.custom_data.should have_at_least(1).items
-    pending "figuring out how custom data will work"
+    pending "writing the meta-usage code for the parser superclass"
   end
 
   it "should know the merchant id" do

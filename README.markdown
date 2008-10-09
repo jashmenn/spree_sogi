@@ -96,6 +96,7 @@ TODO - add keys to custom order data
 MIGRATIONS TO ADD:
  * orders - ship_tax?
  * line_items - ship_amount, tax_amount, ship_tax_amount 
+ * address email
 
 NEW EXT:
  * add order_properties

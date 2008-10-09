@@ -12,6 +12,10 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
     "/AmazonEnvelope/Message/OrderReport"
   end
 
+  def origin_channel
+    "amazon"
+  end
+
   attr_at_xpath :merchant_identifier, "/AmazonEnvelope/Header/MerchantIdentifier"
 
   define_order_methods_as do

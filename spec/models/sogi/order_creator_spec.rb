@@ -39,7 +39,8 @@ describe Sogi::OrderCreator do
   end
 
   it "should raise an exception if the existing order exists in that channel" do
-    pending "write"
+    @order_creator.parser = @parser =  Sogi::Parser::Amazon.new(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample.xml"))
+    lambda { @order_creator.create_order(@parser.orders[0]) }.should raise_error(Sogi::OrderCreator::OrderAlreadyExistsError)
   end
 
   it "should have a billing address" do
@@ -52,8 +53,8 @@ describe Sogi::OrderCreator do
   end
 
   it "should have a billing email address" do
-    pending "figuring out where to put this in the spree database"
-     # attr_at_xpath :billing_email,         "/BillingData/BuyerEmailAddress"
+    bill_address = @order.bill_address
+    bill_address.email.should eql("joesmith@hotmail.com")
   end
 
   it "should have a shipping address" do
@@ -116,14 +117,34 @@ describe Sogi::OrderCreator do
     item.sku                  .should eql("1234")
   end
 
-  #it "should create needed tax zones" do
-    # pending "making sure this is how you want to use it"  
-  #end
+  it "should store custom information such as origin_channel and origin_channel_id" do
+    @order.properties.read_value(:origin_channel).should eql("amazon")
+    @order.properties.read_value(:origin_account_id).should eql("My Store")
+    @order.properties.read_value(:origin_id).should eql("050-1234567-1234567")
+    @order.properties.read_value(:ordered_at).should eql("2002-05-01T15:20:15-08:00") # todo, should be a Time object
+    @order.properties.read_value(:posted_at).should eql("2002-05-01T15:21:49-08:00")  # todo, should be a Time object
+  end
 
   notes = <<-EOF
   then we just need to work on the controller being able to post this xml well
-
   then we need to setup phase three, tracking if this order has been sent to our fulfillment house or not
+
+  ==
+
+
+  okay, maybe we should create a new object: 
+  outside_order_properties
+    * :origin_channel .should eql("amazon")
+    * :origin_account_identifier .should eql("My Store")
+    * :origin_order_identifier).should eql("050-1234567-1234567")
+    * :ordered_at .should eql("2002-05-01T15:20:15-08:00") # todo, should be a Time object
+    * :posted_at .should eql("2002-05-01T15:21:49-08:00")  # todo, should be a Time object
+ 
+  ok, we definitely should go this route. makes it much easier
+
+  should we go even further and create the origin channel as a full-on object? i dont want to get into that
+  right now
+
   EOF
 
 end

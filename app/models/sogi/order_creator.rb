@@ -2,6 +2,9 @@ class Sogi::OrderCreator
   class Error < Sogi::Error #:nodoc:
   end
 
+  class OrderAlreadyExistsError < Error #:nodoc:
+  end
+
   attr_accessor :parser
 
   def create_orders!
@@ -14,12 +17,14 @@ class Sogi::OrderCreator
 
   def create_order(order)
     Order.transaction do
+
       # check for existing order id, raise an exception
       new_order = Order.create
 
       create_order_billing_information(order, new_order)
       create_order_shipping_information(order, new_order)
       create_order_line_items(order, new_order)
+      create_order_custom_data(order, new_order)
 
       new_order.save
       new_order
@@ -30,11 +35,7 @@ class Sogi::OrderCreator
 
 will be custom: 
     merchant id 
-    attr_at_xpath :order_id,              "/AmazonOrderID"
-
-should just add these into the order model anyway
-    attr_at_xpath :ordered_at,            "/OrderDate"
-    attr_at_xpath :posted_at,             "/OrderPostedDate"
+What to do w/ these? order custom?
 
     attr_at_xpath :fulfillment_method,    "/FulfillmentData/FulfillmentMethod"
     attr_at_xpath :fulfillment_level,     "/FulfillmentData/FulfillmentServiceLevel"
@@ -51,6 +52,7 @@ should just add these into the order model anyway
       billing = Address.create(:firstname => first, 
                                :lastname => last, 
                                :phone => order.billing_phone_number, 
+                               :email => order.billing_email,
                                :country_id => Spree::Config[:default_country_id])
       # attr_at_xpath :billing_email,         "/BillingData/BuyerEmailAddress"
       new_order.bill_address = billing
@@ -88,21 +90,17 @@ should just add these into the order model anyway
                                   :ship_tax_amount => parser_item.shipping_tax)
       new_order.line_items << line_item
     end
+  end
 
-=begin
-    attr_at_xpath :order_code,    "/AmazonOrderItemCode"
-    attr_at_xpath :sku,           "/SKU"
-    attr_at_xpath :title,         "/Title"
-    attr_at_xpath :tax_code,      "/ProductTaxCode"
-    attr_at_xpath :gift_message,  "/GiftMessageText"
-
-    def quantity       ; v("/Quantity").to_i         ; end
-    def price          ; price_method("Principal")   ; end
-    def shipping_price ; price_method("Shipping")    ; end
-    def tax            ; price_method("Tax")         ; end
-    def shipping_tax   ; price_method("ShippingTax") ; end
-=end
-
+  # TODO this will become more meta. you specify what data is going to be
+  # custom fields in the PARSER and then define how to get that data. TODO
+  # write this to use that
+  def create_order_custom_data(porder, new_order)
+    new_order.properties.write :origin_channel,    @parser.origin_channel
+    new_order.properties.write :origin_account_id, @parser.merchant_identifier
+    new_order.properties.write :origin_id,         porder.order_id
+    new_order.properties.write :ordered_at,        porder.ordered_at
+    new_order.properties.write :posted_at,         porder.posted_at
   end
 
   # does this method belong here? maybe not
