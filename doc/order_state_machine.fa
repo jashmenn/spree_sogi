@@ -73,10 +73,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>621.0</double> 
+          <double>590.0</double> 
          </void> 
          <void property="y"> 
-          <double>93.60000000000002</double> 
+          <double>90.60000000000002</double> 
          </void> 
         </void> 
         <void id="FAState3" property="state"> 
@@ -93,10 +93,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>621.0</double> 
+          <double>718.0</double> 
          </void> 
          <void property="y"> 
-          <double>219.0</double> 
+          <double>92.0</double> 
          </void> 
         </void> 
         <void id="FAState4" property="state"> 
@@ -113,10 +113,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>459.0</double> 
+          <double>532.0</double> 
          </void> 
          <void property="y"> 
-          <double>327.0</double> 
+          <double>351.0</double> 
          </void> 
         </void> 
         <void id="FAState5" property="state"> 
@@ -133,10 +133,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>324.0</double> 
+          <double>418.0</double> 
          </void> 
          <void property="y"> 
-          <double>325.0</double> 
+          <double>188.0</double> 
          </void> 
         </void> 
         <void id="FAState6" property="state"> 
@@ -153,10 +153,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>600.0</double> 
+          <double>834.2</double> 
          </void> 
          <void property="y"> 
-          <double>330.0</double> 
+          <double>93.0</double> 
          </void> 
         </void> 
         <void id="FAState7" property="state"> 
@@ -173,10 +173,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>614.4000000000001</double> 
+          <double>932.4000000000001</double> 
          </void> 
          <void property="y"> 
-          <double>450.80000000000007</double> 
+          <double>153.60000000000002</double> 
          </void> 
         </void> 
         <void id="FAState8" property="state"> 
@@ -193,10 +193,10 @@
         </void> 
         <void property="position"> 
          <void property="x"> 
-          <double>851.0</double> 
+          <double>929.0</double> 
          </void> 
          <void property="y"> 
-          <double>116.0</double> 
+          <double>36.0</double> 
          </void> 
         </void> 
         <void id="FAState9" property="state"> 
@@ -438,20 +438,20 @@
            <void property="anchor"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>602.9252297016857</double> 
+              <double>572.4789124369639</double> 
              </void> 
              <void property="y"> 
-              <double>85.03830164843595</double> 
+              <double>80.9557534971144</double> 
              </void> 
             </object> 
            </void> 
            <void property="direction"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>-86.13007362409826</double> 
+              <double>-71.39434703180416</double> 
              </void> 
              <void property="y"> 
-              <double>-40.79828939437802</double> 
+              <double>-39.29805608299619</double> 
              </void> 
             </object> 
            </void> 
@@ -469,10 +469,10 @@
           <void property="end"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>621.0</double> 
+             <double>590.0</double> 
             </void> 
             <void property="y"> 
-             <double>93.60000000000002</double> 
+             <double>90.60000000000002</double> 
             </void> 
            </object> 
           </void> 
@@ -489,10 +489,10 @@
            <void property="position"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>534.9475570337007</double> 
+              <double>518.5088751536808</double> 
              </void> 
              <void property="y"> 
-              <double>44.407895731108695</double> 
+              <double>41.4859084447666</double> 
              </void> 
             </object> 
            </void> 
@@ -1089,20 +1089,20 @@
            <void property="anchor"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>631.7566434332374</double> 
+              <double>701.156688713634</double> 
              </void> 
              <void property="y"> 
-              <double>202.13896141840038</double> 
+              <double>81.21561940069921</double> 
              </void> 
             </object> 
            </void> 
            <void property="direction"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>40.0</double> 
+              <double>-63.56252616647555</double> 
              </void> 
              <void property="y"> 
-              <double>-62.69999999999999</double> 
+              <double>-40.69760763651972</double> 
              </void> 
             </object> 
            </void> 
@@ -1120,10 +1120,10 @@
           <void property="end"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>621.0</double> 
+             <double>718.0</double> 
             </void> 
             <void property="y"> 
-             <double>219.0</double> 
+             <double>92.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1140,10 +1140,10 @@
            <void property="position"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>671.7566434332374</double> 
+              <double>654.5533991813999</double> 
              </void> 
              <void property="y"> 
-              <double>156.3</double> 
+              <double>40.7035034148665</double> 
              </void> 
             </object> 
            </void> 
@@ -1154,10 +1154,10 @@
           <void property="start"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>621.0</double> 
+             <double>590.0</double> 
             </void> 
             <void property="y"> 
-             <double>93.60000000000002</double> 
+             <double>90.60000000000002</double> 
             </void> 
            </object> 
           </void> 
@@ -1197,20 +1197,20 @@
            <void property="anchor"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>441.9465903059834</double> 
+              <double>527.4809887559959</double> 
              </void> 
              <void property="y"> 
-              <double>316.55101833631517</double> 
+              <double>331.51722459769746</double> 
              </void> 
             </object> 
            </void> 
            <void property="direction"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>-66.90747242744192</double> 
+              <double>-24.221278474285214</double> 
              </void> 
              <void property="y"> 
-              <double>-40.995611147671696</double> 
+              <double>-104.42499542289255</double> 
              </void> 
             </object> 
            </void> 
@@ -1228,10 +1228,10 @@
           <void property="end"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>459.0</double> 
+             <double>532.0</double> 
             </void> 
             <void property="y"> 
-             <double>327.0</double> 
+             <double>351.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1248,10 +1248,10 @@
            <void property="position"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>392.2435512935751</double> 
+              <double>513.8943116377744</double> 
              </void> 
              <void property="y"> 
-              <double>275.810287683681</double> 
+              <double>242.29784339443998</double> 
              </void> 
             </object> 
            </void> 
@@ -1262,10 +1262,10 @@
           <void property="start"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>324.0</double> 
+             <double>418.0</double> 
             </void> 
             <void property="y"> 
-             <double>325.0</double> 
+             <double>188.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1305,20 +1305,20 @@
            <void property="anchor"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>614.3910810576231</double> 
+              <double>817.8246209071112</double> 
              </void> 
              <void property="y"> 
-              <double>316.11127126073364</double> 
+              <double>81.51753686859038</double> 
              </void> 
             </object> 
            </void> 
            <void property="direction"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>49.8028098278827</double> 
+              <double>-57.755778667224604</double> 
              </void> 
              <void property="y"> 
-              <double>-48.06433327580595</double> 
+              <double>-40.4985188685039</double> 
              </void> 
             </object> 
            </void> 
@@ -1336,10 +1336,10 @@
           <void property="end"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>600.0</double> 
+             <double>834.2</double> 
             </void> 
             <void property="y"> 
-             <double>330.0</double> 
+             <double>93.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1356,10 +1356,10 @@
            <void property="position"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>661.1597979974285</double> 
+              <double>776.541817710941</double> 
              </void> 
              <void property="y"> 
-              <double>284.0842861076216</double> 
+              <double>41.16078198864979</double> 
              </void> 
             </object> 
            </void> 
@@ -1370,10 +1370,10 @@
           <void property="start"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>621.0</double> 
+             <double>718.0</double> 
             </void> 
             <void property="y"> 
-             <double>219.0</double> 
+             <double>92.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1413,20 +1413,20 @@
            <void property="anchor"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>582.8177360468501</double> 
+              <double>816.7254643150909</double> 
              </void> 
              <void property="y"> 
-              <double>319.76428774123247</double> 
+              <double>102.72834017686662</double> 
              </void> 
             </object> 
            </void> 
            <void property="direction"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>-69.64912874037691</double> 
+              <double>-177.07191544409397</double> 
              </void> 
              <void property="y"> 
-              <double>-41.49094920228259</double> 
+              <double>98.57863237517364</double> 
              </void> 
             </object> 
            </void> 
@@ -1444,10 +1444,10 @@
           <void property="end"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>600.0</double> 
+             <double>834.2</double> 
             </void> 
             <void property="y"> 
-             <double>330.0</double> 
+             <double>93.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1464,10 +1464,10 @@
            <void property="position"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>530.5607790479529</double> 
+              <double>654.5650176681107</double> 
              </void> 
              <void property="y"> 
-              <double>278.6433847462154</double> 
+              <double>188.57646643140708</double> 
              </void> 
             </object> 
            </void> 
@@ -1478,10 +1478,10 @@
           <void property="start"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>459.0</double> 
+             <double>532.0</double> 
             </void> 
             <void property="y"> 
-             <double>327.0</double> 
+             <double>351.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1521,20 +1521,20 @@
            <void property="anchor"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>623.3336001317388</double> 
+              <double>924.3968321131376</double> 
              </void> 
              <void property="y"> 
-              <double>432.90612426872826</double> 
+              <double>135.27108012525855</double> 
              </void> 
             </object> 
            </void> 
            <void property="direction"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>32.518795332974264</double> 
+              <double>-28.093570288631668</double> 
              </void> 
              <void property="y"> 
-              <double>-65.13469083439435</double> 
+              <double>-64.34012207353757</double> 
              </void> 
             </object> 
            </void> 
@@ -1552,10 +1552,10 @@
           <void property="end"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>614.4000000000001</double> 
+             <double>932.4000000000001</double> 
             </void> 
             <void property="y"> 
-             <double>450.80000000000007</double> 
+             <double>153.60000000000002</double> 
             </void> 
            </object> 
           </void> 
@@ -1572,10 +1572,10 @@
            <void property="position"> 
             <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
              <void property="x"> 
-              <double>657.8303875855742</double> 
+              <double>910.2906453862158</double> 
              </void> 
              <void property="y"> 
-              <double>384.3645895593355</double> 
+              <double>79.56268354906943</double> 
              </void> 
             </object> 
            </void> 
@@ -1586,10 +1586,10 @@
           <void property="start"> 
            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
             <void property="x"> 
-             <double>600.0</double> 
+             <double>834.2</double> 
             </void> 
             <void property="y"> 
-             <double>330.0</double> 
+             <double>93.0</double> 
             </void> 
            </object> 
           </void> 
@@ -1612,6 +1612,710 @@
         </void> 
         <void property="target"> 
          <object idref="GElementFAState8"/> 
+        </void> 
+        <void property="targetAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="GElementFAState9" class="edu.usfca.vas.graphics.fa.GElementFAState"> 
+        <void property="label"> 
+         <string>order_motion_entering_in_progress</string> 
+        </void> 
+        <void property="position"> 
+         <void property="x"> 
+          <double>186.8</double> 
+         </void> 
+         <void property="y"> 
+          <double>563.8000000000001</double> 
+         </void> 
+        </void> 
+        <void id="FAState10" property="state"> 
+         <void property="name"> 
+          <string>order_motion_entering_in_progress</string> 
+         </void> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object id="GElementFAState10" class="edu.usfca.vas.graphics.fa.GElementFAState"> 
+        <void property="label"> 
+         <string>amazon_confirmation_in_progress</string> 
+        </void> 
+        <void property="position"> 
+         <void property="x"> 
+          <double>761.0</double> 
+         </void> 
+         <void property="y"> 
+          <double>550.4000000000001</double> 
+         </void> 
+        </void> 
+        <void id="FAState11" property="state"> 
+         <void property="name"> 
+          <string>amazon_confirmation_in_progress</string> 
+         </void> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="edu.usfca.xj.appkit.gview.object.GLink"> 
+        <void property="labelVisible"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="link"> 
+         <object class="edu.usfca.xj.appkit.gview.shape.SLinkArc"> 
+          <void property="arrow"> 
+           <void property="anchor"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>551.9238740736084</double> 
+             </void> 
+             <void property="y"> 
+              <double>352.74334216348706</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="direction"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>187.06083057373314</double> 
+             </void> 
+             <void property="y"> 
+              <double>16.36785255072789</double> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+          <void property="direction"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>147.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>84.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="end"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>532.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>351.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="endDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="endTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+          <void property="flateness"> 
+           <double>-110.4957959926858</double> 
+          </void> 
+          <void property="label"> 
+           <void property="position"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>703.6425607316878</double> 
+             </void> 
+             <void property="y"> 
+              <double>385.07489264013793</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="title"> 
+            <string>amazon_confirmation_failure</string> 
+           </void> 
+          </void> 
+          <void property="start"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>761.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>550.4000000000001</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="startDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="startTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="pattern"> 
+         <string>amazon_confirmation_failure</string> 
+        </void> 
+        <void property="source"> 
+         <object idref="GElementFAState10"/> 
+        </void> 
+        <void property="sourceAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+        <void property="target"> 
+         <object idref="GElementFAState5"/> 
+        </void> 
+        <void property="targetAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="edu.usfca.xj.appkit.gview.object.GLink"> 
+        <void property="labelVisible"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="link"> 
+         <object class="edu.usfca.xj.appkit.gview.shape.SLinkArc"> 
+          <void property="arrow"> 
+           <void property="anchor"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>551.6484798167149</double> 
+             </void> 
+             <void property="y"> 
+              <double>347.2667385716851</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="direction"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>241.2214858376867</double> 
+             </void> 
+             <void property="y"> 
+              <double>-45.832699382298074</double> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+          <void property="direction"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>135.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>120.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="end"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>532.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>351.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="endDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="endTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+          <void property="flateness"> 
+           <double>-192.97176364020044</double> 
+          </void> 
+          <void property="label"> 
+           <void property="position"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>733.3164095912799</double> 
+             </void> 
+             <void property="y"> 
+              <double>350.99609931593244</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="title"> 
+            <string>amazon_confirmation_success</string> 
+           </void> 
+          </void> 
+          <void property="start"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>761.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>550.4000000000001</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="startDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="startTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="pattern"> 
+         <string>amazon_confirmation_success</string> 
+        </void> 
+        <void property="source"> 
+         <object idref="GElementFAState10"/> 
+        </void> 
+        <void property="sourceAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+        <void property="target"> 
+         <object idref="GElementFAState5"/> 
+        </void> 
+        <void property="targetAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="edu.usfca.xj.appkit.gview.object.GLink"> 
+        <void property="labelVisible"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="link"> 
+         <object class="edu.usfca.xj.appkit.gview.shape.SLinkArc"> 
+          <void property="arrow"> 
+           <void property="anchor"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>750.331921917141</double> 
+             </void> 
+             <void property="y"> 
+              <double>533.4827865764476</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="direction"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>-84.55670371890392</double> 
+             </void> 
+             <void property="y"> 
+              <double>-134.08823895873127</double> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+          <void property="direction"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>-107.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>-123.40000000000009</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="end"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>761.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>550.4000000000001</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="endDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="endTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+          <void property="flateness"> 
+           <double>45.59771892167746</double> 
+          </void> 
+          <void property="label"> 
+           <void property="position"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>678.3831192645657</double> 
+             </void> 
+             <void property="y"> 
+              <double>414.083980383222</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="title"> 
+            <string>reserve_for_amazon_confirmation</string> 
+           </void> 
+          </void> 
+          <void property="start"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>532.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>351.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="startDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="startTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="pattern"> 
+         <string>reserve_for_amazon_confirmation</string> 
+        </void> 
+        <void property="source"> 
+         <object idref="GElementFAState5"/> 
+        </void> 
+        <void property="sourceAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+        <void property="target"> 
+         <object idref="GElementFAState10"/> 
+        </void> 
+        <void property="targetAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="edu.usfca.xj.appkit.gview.object.GLink"> 
+        <void property="labelVisible"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="link"> 
+         <object class="edu.usfca.xj.appkit.gview.shape.SLinkArc"> 
+          <void property="arrow"> 
+           <void property="anchor"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>190.9101386100295</double> 
+             </void> 
+             <void property="y"> 
+              <double>544.2268867931966</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="direction"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>60.521319192434305</double> 
+             </void> 
+             <void property="y"> 
+              <double>-288.21184499422776</double> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+          <void property="direction"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>204.2</double> 
+            </void> 
+            <void property="y"> 
+             <double>-236.80000000000007</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="end"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>186.8</double> 
+            </void> 
+            <void property="y"> 
+             <double>563.8000000000001</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="endDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="endTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+          <void property="flateness"> 
+           <double>-213.58178216263968</double> 
+          </void> 
+          <void property="label"> 
+           <void property="position"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>285.2539912234078</double> 
+             </void> 
+             <void property="y"> 
+              <double>337.12179403346056</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="title"> 
+            <string>reserve_for_order_motion_entering</string> 
+           </void> 
+          </void> 
+          <void property="start"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>532.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>351.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="startDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="startTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="pattern"> 
+         <string>reserve_for_order_motion_entering</string> 
+        </void> 
+        <void property="position"> 
+         <void property="x"> 
+          <double>-52.0</double> 
+         </void> 
+         <void property="y"> 
+          <double>-37.0</double> 
+         </void> 
+        </void> 
+        <void property="source"> 
+         <object idref="GElementFAState5"/> 
+        </void> 
+        <void property="sourceAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+        <void property="target"> 
+         <object idref="GElementFAState9"/> 
+        </void> 
+        <void property="targetAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="edu.usfca.xj.appkit.gview.object.GLink"> 
+        <void property="labelVisible"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="link"> 
+         <object class="edu.usfca.xj.appkit.gview.shape.SLinkArc"> 
+          <void property="arrow"> 
+           <void property="anchor"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>512.0018315107444</double> 
+             </void> 
+             <void property="y"> 
+              <double>351.27066044289154</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="direction"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>-236.21988777717274</double> 
+             </void> 
+             <void property="y"> 
+              <double>3.1970617449247243</double> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+          <void property="direction"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>-404.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>145.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="end"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>532.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>351.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="endDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="endTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+          <void property="flateness"> 
+           <double>121.2366965289839</double> 
+          </void> 
+          <void property="label"> 
+           <void property="position"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>311.70889858999686</double> 
+             </void> 
+             <void property="y"> 
+              <double>380.03642759993863</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="title"> 
+            <string>order_motion_entering_failure</string> 
+           </void> 
+          </void> 
+          <void property="start"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>186.8</double> 
+            </void> 
+            <void property="y"> 
+             <double>563.8000000000001</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="startDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="startTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="pattern"> 
+         <string>order_motion_entering_failure</string> 
+        </void> 
+        <void property="position"> 
+         <void property="x"> 
+          <double>-19.0</double> 
+         </void> 
+         <void property="y"> 
+          <double>-12.0</double> 
+         </void> 
+        </void> 
+        <void property="source"> 
+         <object idref="GElementFAState9"/> 
+        </void> 
+        <void property="sourceAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+        <void property="target"> 
+         <object idref="GElementFAState5"/> 
+        </void> 
+        <void property="targetAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+       </object> 
+      </void> 
+      <void method="add"> 
+       <object class="edu.usfca.xj.appkit.gview.object.GLink"> 
+        <void property="labelVisible"> 
+         <boolean>true</boolean> 
+        </void> 
+        <void property="link"> 
+         <object class="edu.usfca.xj.appkit.gview.shape.SLinkArc"> 
+          <void property="arrow"> 
+           <void property="anchor"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>513.1179486941968</double> 
+             </void> 
+             <void property="y"> 
+              <double>357.593037121465</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="direction"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>-196.0019012828668</double> 
+             </void> 
+             <void property="y"> 
+              <double>68.43789321971042</double> 
+             </void> 
+            </object> 
+           </void> 
+          </void> 
+          <void property="direction"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>-383.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>189.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="end"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>532.0</double> 
+            </void> 
+            <void property="y"> 
+             <double>351.0</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="endDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="endTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+          <void property="flateness"> 
+           <double>44.5956335850401</double> 
+          </void> 
+          <void property="label"> 
+           <void property="position"> 
+            <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+             <void property="x"> 
+              <double>334.94944871765915</double> 
+             </void> 
+             <void property="y"> 
+              <double>417.7367936904885</double> 
+             </void> 
+            </object> 
+           </void> 
+           <void property="title"> 
+            <string>order_motion_entering_success</string> 
+           </void> 
+          </void> 
+          <void property="start"> 
+           <object class="edu.usfca.xj.appkit.gview.base.Vector2D"> 
+            <void property="x"> 
+             <double>186.8</double> 
+            </void> 
+            <void property="y"> 
+             <double>563.8000000000001</double> 
+            </void> 
+           </object> 
+          </void> 
+          <void property="startDirection"> 
+           <object idref="Vector2D0"/> 
+          </void> 
+          <void property="startTangentOffset"> 
+           <double>20.0</double> 
+          </void> 
+         </object> 
+        </void> 
+        <void property="pattern"> 
+         <string>order_motion_entering_success</string> 
+        </void> 
+        <void property="source"> 
+         <object idref="GElementFAState9"/> 
+        </void> 
+        <void property="sourceAnchorKey"> 
+         <string>CENTER</string> 
+        </void> 
+        <void property="target"> 
+         <object idref="GElementFAState5"/> 
         </void> 
         <void property="targetAnchorKey"> 
          <string>CENTER</string> 
@@ -1665,6 +2369,12 @@
         </void> 
         <void method="add"> 
          <object idref="FAState9"/> 
+        </void> 
+        <void method="add"> 
+         <object idref="FAState10"/> 
+        </void> 
+        <void method="add"> 
+         <object idref="FAState11"/> 
         </void> 
        </void> 
       </void> 
@@ -2509,6 +3219,812 @@
           </void> 
           <void property="s2"> 
            <string>returned</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>e</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>l</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>u</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>t</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>z</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>o</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>r</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>c</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>_</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>i</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>m</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>a</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>f</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>u</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>t</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>n</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>s</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>e</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>o</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>z</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>r</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>c</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>_</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>v</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>i</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>m</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>a</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>f</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>t</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>n</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>s</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>amazon_confirmation_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>e</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>o</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>d</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>r</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>_</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>g</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>v</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>i</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>m</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>f</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>t</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>n</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>s</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>paid</string> 
+          </void> 
+          <void property="s2"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>e</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>g</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>l</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>a</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>u</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>f</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>o</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>d</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>r</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>c</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>_</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>g</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>i</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>m</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>u</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>t</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>n</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
+          </void> 
+          <void property="symbol"> 
+           <string>s</string> 
+          </void> 
+         </object> 
+        </void> 
+        <void method="add"> 
+         <object class="edu.usfca.vas.machine.fa.FATransition"> 
+          <void property="s1"> 
+           <string>order_motion_entering_in_progress</string> 
+          </void> 
+          <void property="s2"> 
+           <string>paid</string> 
           </void> 
           <void property="symbol"> 
            <string>e</string> 
