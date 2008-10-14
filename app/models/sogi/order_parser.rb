@@ -79,7 +79,7 @@ class Sogi::OrderParser
 
     # add a custom attribute that should be saved for each order
     def custom_order_attribute(custom_key, value_instruction=nil)
-      Order.add_custom_attribute(custom_key, value_instruction)
+      Order.custom_order_attribute(custom_key, value_instruction)
     end
 
     def define_order_methods_as(&block)

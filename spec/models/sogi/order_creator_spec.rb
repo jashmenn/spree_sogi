@@ -128,8 +128,8 @@ describe Sogi::OrderCreator do
   end
 
   it "should record information about fullfillment methods and service levels" do
-    @order.properties.read(:origin_fulfillment_method).should eql("Ship")
-    @order.properties.read(:origin_fulfillment_level).should eql("Standard")
+    @order.properties.read_value(:origin_fulfillment_method).should eql("Ship")
+    @order.properties.read_value(:origin_fulfillment_level).should eql("Standard")
   end
               
 
