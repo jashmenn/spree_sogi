@@ -104,12 +104,25 @@ What to do w/ these? order custom?
   # TODO this will become more meta. you specify what data is going to be
   # custom fields in the PARSER and then define how to get that data. TODO
   # write this to use that
+  #
+  # for each custom order data specified,
+  # if its a Symbol, its a method on the parsed order
+  # if it is a String it is considered a literal value
+  # if it is a Proc, call that proc with the parsed order
+  #
+  # write a custom property with that value
   def create_order_custom_data(porder, new_order)
-    # new_order.properties.write :origin_channel,    @parser.origin_channel
-    # new_order.properties.write :origin_account_id, @parser.merchant_identifier
-    # new_order.properties.write :origin_id,         porder.order_id
-    # new_order.properties.write :ordered_at,        porder.ordered_at
-    # new_order.properties.write :posted_at,         porder.posted_at
+    custom_attrs = porder.class.custom_attributes_and_instructions
+    custom_attrs.each do |key,instruction|
+      value = case instruction.class.to_s
+              when 'String' then instruction
+              when 'Symbol' then porder.send(instruction)
+              when 'Proc'   then instruction.call(porder)
+              else nil
+              end
+               
+      new_order.properties.write key, value
+    end
   end
 
   # does this method belong here? maybe not

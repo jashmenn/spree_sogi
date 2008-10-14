@@ -3,8 +3,6 @@ $: << File.dirname(__FILE__) + "/../lib"
 require 'trollop'
 require 'pp'
 
-# todo, make sure this whole bin script becomes a class somewhere
-
 opts = Trollop::options do
   version "#{$0} (c) 2008 Nate Murray"
   banner <<-EOS

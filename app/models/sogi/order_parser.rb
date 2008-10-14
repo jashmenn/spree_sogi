@@ -4,7 +4,7 @@ require 'ostruct'
 # abstract class
 class Sogi::OrderParser
 
-  module XmlParsingClasMethods
+  module XmlParsingClassMethods
     # attr_at_xpath :order_id, "/AmazonOrderID"
     # then the custom data fields just specify what you want to go into custom data,
     # by default calls the method of the same key name
@@ -34,31 +34,19 @@ class Sogi::OrderParser
   class Order
     include XmlParsingInstanceMethods
     attr_accessor :document
+    @@custom_attributes_and_instructions = {}
 
     class << self
-      include XmlParsingClasMethods
-      # def add_custom_data(key, xpath)
-      #   @@custom_data ||= {}
-      #   @@custom_data[key] = xpath
+      include XmlParsingClassMethods
 
-      #   define_method key do
-      #     read_custom_data(key)
-      #   end
-      # end
+      def custom_order_attribute(custom_key, value_instruction=nil)
+        @@custom_attributes_and_instructions[custom_key] = value_instruction
+      end
+
+      def custom_attributes_and_instructions
+        @@custom_attributes_and_instructions
+      end
     end
-
-    # def initialize
-    #   super
-    # end
-
-    # def read_custom_data(key)
-    #   v(@@custom_data[key])
-    # end
-    # protected :read_custom_data
-
-    # def custom_data
-    #   @@custom_data ||= {}
-    # end
 
     def line_items
       ret = []
@@ -75,7 +63,7 @@ class Sogi::OrderParser
 
   class LineItem
     class << self
-      include XmlParsingClasMethods
+      include XmlParsingClassMethods
     end
 
     include XmlParsingInstanceMethods
@@ -87,11 +75,12 @@ class Sogi::OrderParser
   attr_accessor :document
 
   class << self
-    include XmlParsingClasMethods
+    include XmlParsingClassMethods
 
-    # def custom_order_data(key, xpath)
-    #   Order.add_custom_data(key, xpath)
-    # end
+    # add a custom attribute that should be saved for each order
+    def custom_order_attribute(custom_key, value_instruction=nil)
+      Order.add_custom_attribute(custom_key, value_instruction)
+    end
 
     def define_order_methods_as(&block)
       Order.class_eval &block
