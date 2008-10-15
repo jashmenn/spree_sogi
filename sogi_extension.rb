@@ -10,7 +10,7 @@ class SogiExtension < Spree::Extension
   url "http://github.com/jashmenn/spree_sogi/tree/master"
 
   define_routes do |map|
-    map.sogi_orders_create '/sogi/orders/create/:input_order_format.:format', :controller => "order_gateway_input_controller", :action => "create"
+    map.sogi_orders_create '/sogi/orders/create/:input_order_format.:format', :controller => "order_gateway_input", :action => "create"
   end
 
   def activate

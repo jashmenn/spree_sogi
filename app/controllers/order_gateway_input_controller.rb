@@ -2,6 +2,7 @@ class OrderGatewayInputController < ApplicationController
   class BadParserError < Sogi::Error #:nodoc:
   end
   rescue_from BadParserError, :with => :show_error
+  skip_before_filter :verify_authenticity_token
 
   # POST '/sogi/orders/create/:input_order_format.xml'
   def create
