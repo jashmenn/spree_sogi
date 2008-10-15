@@ -11,14 +11,14 @@ describe OrderGatewayInputController do
 
   it "should have the right routes" do
     params_from(:get, "/sogi/orders/create/amazon.xml").should == {
-      :controller => "order_gateway_input_controller",
+      :controller => "order_gateway_input",
       :action => "create",
       :input_order_format => "amazon",
       :format => "xml"
     }
 
     params_from(:get, "/sogi/orders/create/ebay.xml").should == {
-      :controller => "order_gateway_input_controller",
+      :controller => "order_gateway_input",
       :action => "create",
       :input_order_format => "ebay",
       :format => "xml"

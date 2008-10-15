@@ -36,6 +36,8 @@ class Sogi::OrderCreator
       create_order_line_items(order, new_order)
       create_order_custom_data(order, new_order)
 
+      new_order.state = order.initial_state if order.initial_state 
+
       new_order.save
       new_order
     end

@@ -79,5 +79,9 @@ describe Sogi::Parser::Amazon do
     @line_item.gift_message.should eql("We love you mom!")
   end
 
+  it "should set the state according to the parsers instructions" do
+    @order.initial_state.should eql('paid')
+  end
+
 end
 

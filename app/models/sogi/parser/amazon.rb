@@ -21,6 +21,8 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
   custom_order_attribute :origin_fulfillment_method, :fulfillment_method
   custom_order_attribute :origin_fulfillment_level, :fulfillment_level
 
+  set_order_state_to 'paid'
+
   define_order_methods_as do
     # the custom data fields just specify what you want to go into custom data,
     # by default calls the method of the same key name

@@ -34,7 +34,10 @@ class Sogi::OrderParser
   class Order
     include XmlParsingInstanceMethods
     attr_accessor :document
+
     @@custom_attributes_and_instructions = {}
+    @@initial_order_state = nil
+    cattr_accessor :initial_order_state
 
     class << self
       include XmlParsingClassMethods
@@ -57,6 +60,10 @@ class Sogi::OrderParser
         ret << li
       end
       ret
+    end
+
+    def initial_state
+      self.class.initial_order_state
     end
 
   end
@@ -88,6 +95,10 @@ class Sogi::OrderParser
 
     def define_line_item_methods_as(&block)
       LineItem.class_eval &block
+    end
+
+    def set_order_state_to(initial_state)
+      Order.initial_order_state = initial_state
     end
 
     def new_parser_for(parser_name)

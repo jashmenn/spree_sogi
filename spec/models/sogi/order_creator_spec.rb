@@ -131,6 +131,10 @@ describe Sogi::OrderCreator do
     @order.properties.read_value(:origin_fulfillment_method).should eql("Ship")
     @order.properties.read_value(:origin_fulfillment_level).should eql("Standard")
   end
+
+  it "should store the initial state as specified" do
+    @order.state.should eql('paid')
+  end
               
 
   notes = <<-EOF
