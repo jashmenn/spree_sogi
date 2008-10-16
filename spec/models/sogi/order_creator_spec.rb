@@ -44,7 +44,7 @@ describe Sogi::OrderCreator do
   end
 
   it "should have a billing address" do
-    bill_address = @order.bill_address
+    bill_address = @order.creditcard_payment.address
     bill_address.should_not be_nil
 
     bill_address.firstname.should eql("Joe")
@@ -53,12 +53,22 @@ describe Sogi::OrderCreator do
   end
 
   it "should have a billing email address" do
-    bill_address = @order.bill_address
+    bill_address = @order.creditcard_payment.address
     bill_address.email.should eql("joesmith@hotmail.com")
   end
 
+  it "should create a creditcard payment" do
+    payment = @order.creditcard_payment
+    payment.should_not be_nil
+    bill_address = payment.address
+    bill_address.should_not be_nil
+    bill_address.firstname.should eql("Joe")
+  end
+
+
+  # ship_address is depricated. use order#address
   it "should have a shipping address" do
-    ship_address = @order.ship_address
+    ship_address = @order.address
     ship_address.should_not be_nil
     ship_address.addressable.should_not be_nil
     ship_address.addressable.should eql(@order)

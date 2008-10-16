@@ -29,7 +29,7 @@ class SogiExtension < Spree::Extension
     end
 
     Order.class_eval do
-      has_one :outside_order_attribute
+      has_one :outside_order_attribute, :dependent => :destroy
 
       # TODO these methods will be moved into a new object instead of being
       # referenced from custom properties.  inspecting the custom properties

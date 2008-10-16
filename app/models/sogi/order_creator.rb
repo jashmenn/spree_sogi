@@ -32,6 +32,7 @@ class Sogi::OrderCreator
       new_order.save
 
       create_and_verify_outside_order_attributes(order, new_order)
+      create_payment_information(order, new_order)
       create_order_billing_information(order, new_order)
       create_order_shipping_information(order, new_order)
       create_order_line_items(order, new_order)
@@ -55,6 +56,22 @@ What to do w/ these? order custom?
 
   private
 
+  def create_payment_information(order, new_order)
+    # for now, create a creditcard payment, b/c thats all spree supports, but maybe in the future do something better
+    # create the cc payment
+    # then we can attach an addressable to it
+    payment = CreditcardPayment.new(:order_id => new_order.id, :number => "AMAZON_PAYMENT")
+
+    # HACK to override the callback
+    payment.instance_eval do
+      def authorize
+      end
+    end
+
+    new_order.creditcard_payment = payment
+    payment.save
+  end
+
   def create_order_billing_information(order, new_order)
       shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
 
@@ -66,9 +83,9 @@ What to do w/ these? order custom?
                                :email => order.billing_email,
                                :country_id => shipping_country.id)
       # attr_at_xpath :billing_email,         "/BillingData/BuyerEmailAddress"
-      new_order.bill_address = billing
-      billing.addressable = new_order # why do i have to do this?
-      billing.save
+      # new_order.bill_address = billing
+      billing.addressable = new_order.creditcard_payment
+      billing.save_without_validation
   end
 
   def create_order_shipping_information(order, new_order)
@@ -88,8 +105,8 @@ What to do w/ these? order custom?
                                 :state_id => state.id,
                                 :zipcode => order.shipping_zip
                                )
-      new_order.ship_address = shipping
-      shipping.addressable = new_order
+      new_order.address = shipping
+      shipping.addressable = new_order # why do i have to do this?
       shipping.save
   end
 
