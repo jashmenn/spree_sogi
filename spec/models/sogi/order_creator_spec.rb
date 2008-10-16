@@ -43,13 +43,23 @@ describe Sogi::OrderCreator do
     lambda { @order_creator.create_order(@parser.orders[0]) }.should raise_error(Sogi::OrderCreator::OrderAlreadyExistsError)
   end
 
-  it "should have a billing address" do
+  it "should billing information" do
     bill_address = @order.creditcard_payment.address
     bill_address.should_not be_nil
 
     bill_address.firstname.should eql("Joe")
     bill_address.lastname.should eql("Smith")
     bill_address.phone.should eql("206-555-1234")
+  end
+
+  it "should use the shipping address if billing address isn't available" do
+    bill_address = @order.creditcard_payment.address
+
+    bill_address.address1.should eql("1234 Main St.")
+    bill_address.city.should eql("Seattle")
+    bill_address.state.name.should eql("Washington")
+    bill_address.zipcode.should eql("98004")
+    bill_address.country.iso.should eql("US")
   end
 
   it "should have a billing email address" do

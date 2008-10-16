@@ -72,16 +72,30 @@ What to do w/ these? order custom?
     payment.save
   end
 
-  def create_order_billing_information(order, new_order)
-      shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
+
+  # :use_shipping_if_missing_info - use shipping information if we don't have
+  # enough billing info (e.g. amazon orders)
+  # todo, this could use a big refactoring with the shipping information below
+  def create_order_billing_information(order, new_order, opts={})
+      opts[:use_shipping_if_missing_info] ||= true # todo, actually use this value
+
+      shipping_country = Country.find_by_iso(order.billing_country || order.shipping_country) || Country.find(Spree::Config[:default_country_id])
+      state = State.find_by_name(order.billing_state || order.shipping_state)
 
       # add billing information
       first, last = order.billing_name.split(/ /, 2)
-      billing = Address.create(:firstname => first, 
-                               :lastname => last, 
-                               :phone => order.billing_phone_number, 
-                               :email => order.billing_email,
-                               :country_id => shipping_country.id)
+      billing = Address.create(:firstname  => first,
+      :lastname                            => last,
+      :phone                               => order.billing_phone_number,
+      :email                               => order.billing_email,
+      :country_id                          => shipping_country.id,
+      :address1                            => order.billing_address_one || order.shipping_address_one,
+      :address2                            => order.billing_address_two || order.shipping_address_two,
+      :city                                => order.billing_city        || order.shipping_city,
+      :state_id                            => state.id,
+      :zipcode                             => order.billing_zip         || order.shipping_zip)
+                               
+
       # attr_at_xpath :billing_email,         "/BillingData/BuyerEmailAddress"
       # new_order.bill_address = billing
       billing.addressable = new_order.creditcard_payment

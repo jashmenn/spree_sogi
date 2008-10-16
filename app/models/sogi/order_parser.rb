@@ -66,6 +66,16 @@ class Sogi::OrderParser
       self.class.initial_order_state
     end
 
+
+    # stub methods
+    def billing_email; end
+    def billing_address_one; end
+    def billing_address_two; end
+    def billing_city; end
+    def billing_zip; end
+    def billing_state; end
+    def billing_country; end
+
   end
 
   class LineItem
