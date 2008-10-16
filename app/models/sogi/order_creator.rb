@@ -29,6 +29,7 @@ class Sogi::OrderCreator
       # in that object to test if we can create this object
 
       new_order = Order.create
+      new_order.save
 
       create_and_verify_outside_order_attributes(order, new_order)
       create_order_billing_information(order, new_order)
@@ -66,6 +67,8 @@ What to do w/ these? order custom?
                                :country_id => shipping_country.id)
       # attr_at_xpath :billing_email,         "/BillingData/BuyerEmailAddress"
       new_order.bill_address = billing
+      billing.addressable = new_order # why do i have to do this?
+      billing.save
   end
 
   def create_order_shipping_information(order, new_order)
@@ -86,6 +89,8 @@ What to do w/ these? order custom?
                                 :zipcode => order.shipping_zip
                                )
       new_order.ship_address = shipping
+      shipping.addressable = new_order
+      shipping.save
   end
 
   def create_order_line_items(parser_order, new_order)

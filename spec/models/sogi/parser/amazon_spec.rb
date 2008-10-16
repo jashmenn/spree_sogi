@@ -18,7 +18,7 @@ describe Sogi::Parser::Amazon do
   end
 
   it "should know about various order numbers" do
-    @order.order_id.should eql("050-1234567-1234567")
+    @order.order_id.should eql("050-1234567-1234568")
   end
 
   it "should have custom order data" do

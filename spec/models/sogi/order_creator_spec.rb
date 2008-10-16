@@ -60,6 +60,8 @@ describe Sogi::OrderCreator do
   it "should have a shipping address" do
     ship_address = @order.ship_address
     ship_address.should_not be_nil
+    ship_address.addressable.should_not be_nil
+    ship_address.addressable.should eql(@order)
 
     ship_address.firstname.should eql("Joe")
     ship_address.lastname.should eql("Smith")
@@ -120,7 +122,7 @@ describe Sogi::OrderCreator do
   it "should store custom information such as origin_channel and origin_channel_id" do
     @order.origin_channel.should eql("amazon")
     @order.origin_account_identifier.should eql("My Store")
-    @order.origin_order_identifier.should eql("050-1234567-1234567")
+    @order.origin_order_identifier.should eql("050-1234567-1234568")
     @order.ordered_at.should be_a_kind_of(Time)
     @order.ordered_at.to_i.should eql(1020295215) # "2002-05-01T15:20:15-08:00" 
     @order.posted_at.should be_a_kind_of(Time)

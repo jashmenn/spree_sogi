@@ -8,7 +8,7 @@
     <Message>
         <MessageID>1</MessageID>
         <OrderReport>
-            <AmazonOrderID>050-1234567-1234567</AmazonOrderID>
+            <AmazonOrderID>050-1234567-1234568</AmazonOrderID>
             <AmazonSessionID>902-1030835-1234567</AmazonSessionID>
             <OrderDate>2002-05-01T15:20:15-08:00</OrderDate>
             <OrderPostedDate>2002-05-01T15:21:49-08:00</OrderPostedDate>
