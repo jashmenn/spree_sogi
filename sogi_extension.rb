@@ -38,8 +38,8 @@ class SogiExtension < Spree::Extension
 
       %w{origin_channel origin_account_identifier origin_order_identifier}.each do |name|
         define_method name do
-          return nil unless outside_order_attribute
-          outside_order_attribute.send(name)
+          return nil unless self.outside_order_attribute
+          self.outside_order_attribute.send(name)
           # properties.read_value(name)
         end
       end
@@ -47,8 +47,8 @@ class SogiExtension < Spree::Extension
       %w{ordered_at posted_at}.each do |name|
         define_method name do
           # TODO make this return a Time object
-          return nil unless outside_order_attribute
-          outside_order_attribute.send(name)
+          return nil unless self.outside_order_attribute
+          self.outside_order_attribute.send(name)
           # properties.read_value(name)
         end
       end

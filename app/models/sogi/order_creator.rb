@@ -80,7 +80,7 @@ What to do w/ these? order custom?
       opts[:use_shipping_if_missing_info] ||= true # todo, actually use this value
 
       shipping_country = Country.find_by_iso(order.billing_country || order.shipping_country) || Country.find(Spree::Config[:default_country_id])
-      state = State.find_by_name(order.billing_state || order.shipping_state)
+      state = State.find_by_name(order.billing_state || order.shipping_state) || State.find_by_abbr(order.billing_state || order.shipping_state)
 
       # add billing information
       first, last = order.billing_name.split(/ /, 2)
@@ -106,7 +106,7 @@ What to do w/ these? order custom?
       # add shipping_information
       shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
       # state = State.find_or_create_by_name_and_country_id(order.shipping_state, shipping_country.id) # ... ?
-      state = State.find_by_name(order.shipping_state)
+      state = State.find_by_name(order.shipping_state) || State.find_by_abbr(order.shipping_state)
     
       first, last = order.shipping_name.split(/ /, 2)
       shipping = Address.create(:firstname => first, 

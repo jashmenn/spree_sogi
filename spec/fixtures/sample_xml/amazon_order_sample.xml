@@ -24,7 +24,7 @@
                     <Name>Joe Smith</Name>
                     <AddressFieldOne>1234 Main St.</AddressFieldOne>
                     <City>Seattle</City>
-                    <StateOrRegion>Washington</StateOrRegion>
+                    <StateOrRegion>WA</StateOrRegion>
                     <PostalCode>98004</PostalCode>
                     <CountryCode>US</CountryCode>
                     <PhoneNumber>206-555-1234</PhoneNumber>
