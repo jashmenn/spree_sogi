@@ -134,7 +134,8 @@ What to do w/ these? order custom?
                                   :price => parser_item.price,
                                   :ship_amount => parser_item.shipping_price,
                                   :tax_amount => parser_item.tax,
-                                  :ship_tax_amount => parser_item.shipping_tax)
+                                  :ship_tax_amount => parser_item.shipping_tax,
+                                  :origin_order_item_identifier => parser_item.order_code)
       new_order.line_items << line_item
     end
   end

@@ -137,6 +137,7 @@ describe Sogi::OrderCreator do
 
     item.quantity             .should eql(1)
     item.sku                  .should eql("1234")
+    item.origin_order_item_identifier .should eql("12345678901234")
   end
 
   it "should store custom information such as origin_channel and origin_channel_id" do

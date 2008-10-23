@@ -49,7 +49,7 @@ describe Sogi::Parser::Amazon do
     @order.shipping_name.should eql("Joe Smith")
     @order.shipping_address_one.should eql("1234 Main St.")
     @order.shipping_city.should eql("Seattle")
-    @order.shipping_state.should eql("Washington")
+    @order.shipping_state.should eql("WA")
     @order.shipping_zip.should eql("98004")
     @order.shipping_country.should eql("US")
     @order.shipping_phone.should eql("206-555-1234")
