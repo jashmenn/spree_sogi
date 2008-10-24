@@ -36,7 +36,7 @@ class SogiExtension < Spree::Extension
       # themselves outside of this function is done at your own risk as this
       # implementation will change, but the interface will not
 
-      %w{origin_channel origin_account_identifier origin_order_identifier}.each do |name|
+      %w{origin_channel origin_account_identifier origin_order_identifier origin_account_short_name origin_account_transaction_identifier}.each do |name|
         define_method name do
           return nil unless self.outside_order_attribute
           self.outside_order_attribute.send(name)

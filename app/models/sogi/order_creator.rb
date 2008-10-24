@@ -7,6 +7,12 @@ class Sogi::OrderCreator
 
   attr_accessor :parser
 
+  attr_accessor :opts
+
+  def initialize(opts={})
+    @opts=opts
+  end
+
   def create_orders!
     raise Error, "Need to set a parser before you can create orders." unless @parser
     raise Error, "No orders found to parse" unless parser_orders = @parser.orders
@@ -187,6 +193,8 @@ What to do w/ these? order custom?
       :origin_channel            => @parser.origin_channel,
       :origin_account_identifier => @parser.merchant_identifier,
       :origin_order_identifier   => porder.order_id,
+      :origin_account_short_name => @opts[:origin_account_short_name],
+      :origin_account_transaction_identifier => @opts[:origin_account_transaction_identifier],
       :ordered_at                => porder.ordered_at,
       :posted_at                 => porder.posted_at)
     unless ooa.valid?

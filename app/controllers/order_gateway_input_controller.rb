@@ -11,7 +11,8 @@ class OrderGatewayInputController < ApplicationController
 
     @parser.body = params[:body]
 
-    @order_creator = Sogi::OrderCreator.new
+    @order_creator = Sogi::OrderCreator.new(:origin_account_short_name => params[:origin_account_short_name], 
+                                            :origin_account_transaction_identifier => params[:origin_account_transaction_identifier])
     @order_creator.parser = @parser
 
     @orders, @errors = *@order_creator.create_orders!

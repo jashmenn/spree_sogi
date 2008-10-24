@@ -20,7 +20,7 @@ describe Sogi::OrderCreator do
   include OrderCreatorHelperMethods
 
   before(:each) do
-    @order_creator = Sogi::OrderCreator.new
+    @order_creator = Sogi::OrderCreator.new(:origin_account_short_name => "my_test_store", :origin_account_transaction_identifier => "123456789")
     @order_creator.parser = @parser =  Sogi::Parser::Amazon.new(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample.xml"))
     @order = @order_creator.create_order(@parser.orders[0]) # just create the inital order so we can test it
    end
@@ -161,12 +161,12 @@ describe Sogi::OrderCreator do
 
   it "should store the short name of the origin account we are using" do
     # this is so we can respond to the origin channel
-    pending
+    @order.origin_account_short_name.should eql("my_test_store")
   end
 
   it "should store the origin transaction id" do
     # this is so we can confirm that we downloaded the order
-    pending
+    @order.origin_account_transaction_identifier.should eql("123456789")
   end
               
 
