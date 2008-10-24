@@ -158,6 +158,16 @@ describe Sogi::OrderCreator do
   it "should store the initial state as specified" do
     @order.state.should eql('paid')
   end
+
+  it "should store the short name of the origin account we are using" do
+    # this is so we can respond to the origin channel
+    pending
+  end
+
+  it "should store the origin transaction id" do
+    # this is so we can confirm that we downloaded the order
+    pending
+  end
               
 
   notes = <<-EOF
