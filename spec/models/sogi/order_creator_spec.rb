@@ -39,8 +39,12 @@ describe Sogi::OrderCreator do
   end
 
   it "should raise an exception if the existing order exists in that channel" do
+    original_orders_size = Order.find(:all).size
     @order_creator.parser = @parser =  Sogi::Parser::Amazon.new(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample.xml"))
     lambda { @order_creator.create_order(@parser.orders[0]) }.should raise_error(Sogi::OrderCreator::OrderAlreadyExistsError)
+    # should also check that no extra orders get created
+    current_orders_size = Order.find(:all).size
+    current_orders_size.should eql(original_orders_size)
   end
 
   it "should billing information" do

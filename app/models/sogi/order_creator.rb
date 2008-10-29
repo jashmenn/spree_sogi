@@ -3,6 +3,10 @@ class Sogi::OrderCreator
   end
 
   class OrderAlreadyExistsError < Error #:nodoc:
+    attr_accessor :order_trying_to_create # ehhh im not sure i love this
+    def initialize(order_trying_to_create)
+      @order_trying_to_create = order_trying_to_create
+    end
   end
 
   # raised if we have >0 errors
@@ -27,7 +31,6 @@ class Sogi::OrderCreator
 
     begin
       Order.transaction do
-
         parser_orders.each do |order|
           begin
             orders << create_order(order)
@@ -39,9 +42,7 @@ class Sogi::OrderCreator
             raise AtLeastPartialFailure # raise an error here b/c we dont need to even look at the order orders
           end
         end
-
         # raise AtLeastPartialFailure if errors.size > 0 # or raise it here?
-
       end # end the transaction
 
     rescue AtLeastPartialFailure
@@ -60,14 +61,19 @@ class Sogi::OrderCreator
       new_order = Order.create
       new_order.save
 
-      create_and_verify_outside_order_attributes(order, new_order)
-      create_payment_information(order, new_order)
-      create_order_billing_information(order, new_order)
-      create_order_shipping_information(order, new_order)
-      create_order_line_items(order, new_order)
-      create_order_custom_data(order, new_order)
+      begin
+        create_and_verify_outside_order_attributes(order, new_order)
+        create_payment_information(order, new_order)
+        create_order_billing_information(order, new_order)
+        create_order_shipping_information(order, new_order)
+        create_order_line_items(order, new_order)
+        create_order_custom_data(order, new_order)
 
-      new_order.state = order.initial_state if order.initial_state 
+        new_order.state = order.initial_state if order.initial_state 
+      rescue => e
+        new_order.destroy
+        raise e
+      end
 
       new_order.save
       new_order
@@ -221,7 +227,7 @@ What to do w/ these? order custom?
       :ordered_at                => porder.ordered_at,
       :posted_at                 => porder.posted_at)
     unless ooa.valid?
-      raise OrderAlreadyExistsError, 
+      raise OrderAlreadyExistsError.new(new_order), 
       "Order origin_id #{porder.order_id} for #{@parser.origin_channel} account #{@parser.merchant_identifier} already exists"
     end
     ooa.order = new_order
