@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+    <Header>
+        <DocumentVersion>1.01</DocumentVersion>
+        <MerchantIdentifier>My Store</MerchantIdentifier>
+    </Header>
+    <MessageType>OrderReport</MessageType>
+    <Message>
+        <MessageID>1</MessageID>
+        <OrderReport>
+            <AmazonOrderID>050-1234567-8327398</AmazonOrderID>
+            <AmazonSessionID>902-1030835-1234567</AmazonSessionID>
+            <OrderDate>2002-05-01T15:20:15-08:00</OrderDate>
+            <OrderPostedDate>2002-05-01T15:21:49-08:00</OrderPostedDate>
+            <BillingData>
+                <BuyerEmailAddress>joesmith@hotmail.com</BuyerEmailAddress>
+                <BuyerName>Joe Smith</BuyerName>
+                <BuyerPhoneNumber>206-555-1234</BuyerPhoneNumber>
+            </BillingData>
+            <FulfillmentData>
+                <FulfillmentMethod>Ship</FulfillmentMethod>
+                <FulfillmentServiceLevel>Standard</FulfillmentServiceLevel>
+                <Address>
+                    <Name>Joe Smith</Name>
+                    <AddressFieldOne>1234 Main St.</AddressFieldOne>
+                    <City>Seattle</City>
+                    <StateOrRegion>WA</StateOrRegion>
+                    <PostalCode>98004</PostalCode>
+                    <CountryCode>US</CountryCode>
+                    <PhoneNumber>206-555-1234</PhoneNumber>
+                </Address>
+            </FulfillmentData>
+            <Item>
+                <AmazonOrderItemCode>12345678901234</AmazonOrderItemCode>
+                <SKU>1234</SKU>
+                <Title>Programming Perl, 3rd edition</Title>
+                <Quantity>1</Quantity>
+                <ProductTaxCode>1234</ProductTaxCode>
+                <ItemPrice>
+                    <Component>
+	                <Type>Principal</Type>
+	                <Amount currency="USD">10.00</Amount>
+                    </Component>
+                    <Component>
+	                <Type>Shipping</Type>
+	                <Amount currency="USD">3.49</Amount>
+                    </Component>
+                    <Component>
+	                <Type>Tax</Type>
+	                <Amount currency="USD">1.29</Amount>
+                    </Component>
+                    <Component>
+	                <Type>ShippingTax</Type>
+	                <Amount currency="USD">0.24</Amount>
+                    </Component>
+                </ItemPrice>
+                <ItemFees>
+                    <Fee>
+	                <Type>Commission</Type>
+	                <Amount currency="USD">-0.75</Amount>
+                    </Fee>
+                </ItemFees>
+                <ItemTaxData>
+                    <TaxJurisdictions>
+	                <TaxLocationCode>12345678</TaxLocationCode>
+	                <City>Seattle</City>
+	                <County>King</County>
+	                <State>WA</State>
+                    </TaxJurisdictions>
+                    <TaxableAmounts>
+	                <District currency="USD">10.00</District>
+	                <City currency="USD">10.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">10.00</State>
+                    </TaxableAmounts>
+                    <NonTaxableAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">10.00</County>
+	                <State currency="USD">0.00</State>
+                    </NonTaxableAmounts>
+                    <ZeroRatedAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.00</State>
+                    </ZeroRatedAmounts>
+                    <TaxCollectedAmounts>
+	                <District currency="USD">0.23</District>
+	                <City currency="USD">0.53</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.53</State>
+                    </TaxCollectedAmounts>
+                    <TaxRates>
+	                <District>0.0230</District>
+	                <City>0.0530</City>
+	                <County>0.0230</County>
+	                <State>0.0530</State>
+                    </TaxRates>
+                </ItemTaxData>
+                <ShippingTaxData>
+                    <TaxJurisdictions>
+	                <TaxLocationCode>12345678</TaxLocationCode>
+	                <City>Seattle</City>
+	                <County>King</County>
+	                <State>WA</State>
+                    </TaxJurisdictions>
+                    <TaxableAmounts>
+	                <District currency="USD">3.49</District>
+	                <City currency="USD">3.49</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">3.49</State>
+                    </TaxableAmounts>
+                    <NonTaxableAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">3.49</County>
+	                <State currency="USD">0.00</State>
+                    </NonTaxableAmounts>
+                    <ZeroRatedAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.00</State>
+                    </ZeroRatedAmounts>
+                    <TaxCollectedAmounts>
+	                <District currency="USD">0.04</District>
+	                <City currency="USD">0.10</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.10</State>
+                    </TaxCollectedAmounts>
+                    <TaxRates>
+	                <District>0.0120</District>
+	                <City>0.0190</City>
+	                <County>0.0190</County>
+	                <State>0.0190</State>
+                    </TaxRates>
+                </ShippingTaxData>
+                <Promotion>
+                    <PromotionClaimCode>ABC123</PromotionClaimCode>
+                    <MerchantPromotionID>12345678</MerchantPromotionID>
+                    <Component>
+	                <Type>Principal</Type>
+	                <Amount currency="USD">-1.00</Amount>
+                    </Component>
+                </Promotion>
+                <GiftMessageText>We love you mom!</GiftMessageText>
+            </Item>
+            <Item>
+                <AmazonOrderItemCode>19284375755858</AmazonOrderItemCode>
+                <SKU>5678</SKU>
+                <Title>Programming Ruby, 3rd edition</Title>
+                <Quantity>1</Quantity>
+                <ProductTaxCode>1234</ProductTaxCode>
+                <ItemPrice>
+                    <Component>
+	                <Type>Principal</Type>
+	                <Amount currency="USD">10.00</Amount>
+                    </Component>
+                    <Component>
+	                <Type>Shipping</Type>
+	                <Amount currency="USD">3.49</Amount>
+                    </Component>
+                    <Component>
+	                <Type>Tax</Type>
+	                <Amount currency="USD">1.29</Amount>
+                    </Component>
+                    <Component>
+	                <Type>ShippingTax</Type>
+	                <Amount currency="USD">0.24</Amount>
+                    </Component>
+                </ItemPrice>
+                <ItemFees>
+                    <Fee>
+	                <Type>Commission</Type>
+	                <Amount currency="USD">-0.75</Amount>
+                    </Fee>
+                </ItemFees>
+                <ItemTaxData>
+                    <TaxJurisdictions>
+	                <TaxLocationCode>12345678</TaxLocationCode>
+	                <City>Seattle</City>
+	                <County>King</County>
+	                <State>WA</State>
+                    </TaxJurisdictions>
+                    <TaxableAmounts>
+	                <District currency="USD">10.00</District>
+	                <City currency="USD">10.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">10.00</State>
+                    </TaxableAmounts>
+                    <NonTaxableAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">10.00</County>
+	                <State currency="USD">0.00</State>
+                    </NonTaxableAmounts>
+                    <ZeroRatedAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.00</State>
+                    </ZeroRatedAmounts>
+                    <TaxCollectedAmounts>
+	                <District currency="USD">0.23</District>
+	                <City currency="USD">0.53</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.53</State>
+                    </TaxCollectedAmounts>
+                    <TaxRates>
+	                <District>0.0230</District>
+	                <City>0.0530</City>
+	                <County>0.0230</County>
+	                <State>0.0530</State>
+                    </TaxRates>
+                </ItemTaxData>
+                <ShippingTaxData>
+                    <TaxJurisdictions>
+	                <TaxLocationCode>12345678</TaxLocationCode>
+	                <City>Seattle</City>
+	                <County>King</County>
+	                <State>WA</State>
+                    </TaxJurisdictions>
+                    <TaxableAmounts>
+	                <District currency="USD">3.49</District>
+	                <City currency="USD">3.49</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">3.49</State>
+                    </TaxableAmounts>
+                    <NonTaxableAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">3.49</County>
+	                <State currency="USD">0.00</State>
+                    </NonTaxableAmounts>
+                    <ZeroRatedAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.00</State>
+                    </ZeroRatedAmounts>
+                    <TaxCollectedAmounts>
+	                <District currency="USD">0.04</District>
+	                <City currency="USD">0.10</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.10</State>
+                    </TaxCollectedAmounts>
+                    <TaxRates>
+	                <District>0.0120</District>
+	                <City>0.0190</City>
+	                <County>0.0190</County>
+	                <State>0.0190</State>
+                    </TaxRates>
+                </ShippingTaxData>
+                <Promotion>
+                    <PromotionClaimCode>ABC123</PromotionClaimCode>
+                    <MerchantPromotionID>12345678</MerchantPromotionID>
+                    <Component>
+	                <Type>Principal</Type>
+	                <Amount currency="USD">-1.00</Amount>
+                    </Component>
+                </Promotion>
+            </Item>
+
+        </OrderReport>
+    </Message>
+    <Message>
+        <MessageID>2</MessageID>
+        <OrderReport>
+            <AmazonOrderID></AmazonOrderID>
+            <AmazonSessionID>902-1030835-1234560</AmazonSessionID>
+            <OrderDate>2002-05-01T15:20:15-08:00</OrderDate>
+            <OrderPostedDate>2002-05-01T15:21:49-08:00</OrderPostedDate>
+            <BillingData>
+              <BuyerEmailAddress></BuyerEmailAddress>
+                <BuyerName>Joe Smith</BuyerName>
+                <BuyerPhoneNumber>206-555-1234</BuyerPhoneNumber>
+            </BillingData>
+            <FulfillmentData>
+                <FulfillmentMethod></FulfillmentMethod>
+                <FulfillmentServiceLevel></FulfillmentServiceLevel>
+                <Address>
+                    <Name>Joe Smith</Name>
+                    <AddressFieldOne>1234 Main St.</AddressFieldOne>
+                    <City>Seattle</City>
+                    <StateOrRegion>Washington</StateOrRegion>
+                    <PostalCode>98004</PostalCode>
+                    <CountryCode>US</CountryCode>
+                    <PhoneNumber>206-555-1234</PhoneNumber>
+                </Address>
+            </FulfillmentData>
+            <Item>
+                <AmazonOrderItemCode></AmazonOrderItemCode>
+                <SKU></SKU>
+                <Title>Programming Perl, 3rd edition</Title>
+                <Quantity>1</Quantity>
+                <ProductTaxCode>1234</ProductTaxCode>
+                <ItemPrice>
+                    <Component>
+	                <Type>Principal</Type>
+	                <Amount currency="USD">10.00</Amount>
+                    </Component>
+                    <Component>
+	                <Type>Shipping</Type>
+	                <Amount currency="USD">3.49</Amount>
+                    </Component>
+                    <Component>
+	                <Type>Tax</Type>
+	                <Amount currency="USD">1.29</Amount>
+                    </Component>
+                    <Component>
+	                <Type>ShippingTax</Type>
+	                <Amount currency="USD">0.24</Amount>
+                    </Component>
+                </ItemPrice>
+                <ItemFees>
+                    <Fee>
+	                <Type>Commission</Type>
+	                <Amount currency="USD">-0.75</Amount>
+                    </Fee>
+                </ItemFees>
+                <ItemTaxData>
+                    <TaxJurisdictions>
+	                <TaxLocationCode>12345678</TaxLocationCode>
+	                <City>Seattle</City>
+	                <County>King</County>
+	                <State>WA</State>
+                    </TaxJurisdictions>
+                    <TaxableAmounts>
+	                <District currency="USD">10.00</District>
+	                <City currency="USD">10.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">10.00</State>
+                    </TaxableAmounts>
+                    <NonTaxableAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">10.00</County>
+	                <State currency="USD">0.00</State>
+                    </NonTaxableAmounts>
+                    <ZeroRatedAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.00</State>
+                    </ZeroRatedAmounts>
+                    <TaxCollectedAmounts>
+	                <District currency="USD">0.23</District>
+	                <City currency="USD">0.53</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.53</State>
+                    </TaxCollectedAmounts>
+                    <TaxRates>
+	                <District>0.0230</District>
+	                <City>0.0530</City>
+	                <County>0.0230</County>
+	                <State>0.0530</State>
+                    </TaxRates>
+                </ItemTaxData>
+                <ShippingTaxData>
+                    <TaxJurisdictions>
+	                <TaxLocationCode>12345678</TaxLocationCode>
+	                <City>Seattle</City>
+	                <County>King</County>
+	                <State>WA</State>
+                    </TaxJurisdictions>
+                    <TaxableAmounts>
+	                <District currency="USD">3.49</District>
+	                <City currency="USD">3.49</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">3.49</State>
+                    </TaxableAmounts>
+                    <NonTaxableAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">3.49</County>
+	                <State currency="USD">0.00</State>
+                    </NonTaxableAmounts>
+                    <ZeroRatedAmounts>
+	                <District currency="USD">0.00</District>
+	                <City currency="USD">0.00</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.00</State>
+                    </ZeroRatedAmounts>
+                    <TaxCollectedAmounts>
+	                <District currency="USD">0.04</District>
+	                <City currency="USD">0.10</City>
+	                <County currency="USD">0.00</County>
+	                <State currency="USD">0.10</State>
+                    </TaxCollectedAmounts>
+                    <TaxRates>
+	                <District>0.0120</District>
+	                <City>0.0190</City>
+	                <County>0.0190</County>
+	                <State>0.0190</State>
+                    </TaxRates>
+                </ShippingTaxData>
+                <Promotion>
+                    <PromotionClaimCode>ABC123</PromotionClaimCode>
+                    <MerchantPromotionID>12345678</MerchantPromotionID>
+                    <Component>
+	                <Type>Principal</Type>
+	                <Amount currency="USD">-1.00</Amount>
+                    </Component>
+                </Promotion>
+            </Item>
+        </OrderReport>
+    </Message>
+
+</AmazonEnvelope>

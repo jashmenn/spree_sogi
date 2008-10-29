@@ -5,6 +5,10 @@ class Sogi::OrderCreator
   class OrderAlreadyExistsError < Error #:nodoc:
   end
 
+  # raised if we have >0 errors
+  class AtLeastPartialFailure < Error #:nodoc:
+  end
+
   attr_accessor :parser
 
   attr_accessor :opts
@@ -13,23 +17,42 @@ class Sogi::OrderCreator
     @opts=opts
   end
 
+  # Transaction to around creating all orders. If one fails
+  # they all fail. Following Pragmatic Programmer's advice "fail early"
   def create_orders!
     raise Error, "Need to set a parser before you can create orders." unless @parser
     raise Error, "No orders found to parse" unless parser_orders = @parser.orders
     # todo, should be able to handle split orders where some pass and some fail here
     orders, errors = [], []
-    parser_orders.each do |order|
-      begin
-        orders << create_order(order)
-      rescue => e
-        errors << e
-      end
+
+    begin
+      Order.transaction do
+
+        parser_orders.each do |order|
+          begin
+            orders << create_order(order)
+          rescue OrderAlreadyExistsError => e # if the order already existed, no problem really, just notify
+            errors << e
+          rescue => e
+            errors << e
+            orders = [] # clear out the orders array, b/c we're about to roll everything back
+            raise AtLeastPartialFailure # raise an error here b/c we dont need to even look at the order orders
+          end
+        end
+
+        # raise AtLeastPartialFailure if errors.size > 0 # or raise it here?
+
+      end # end the transaction
+
+    rescue AtLeastPartialFailure
+      ActiveRecord::Base.logger.warn "got a partial failure when trying to create orders"
+      # do nothing, this is just to DB rollback
     end
     [orders, errors]
   end
 
   def create_order(order)
-    Order.transaction do
+#    Order.transaction do
       # check for existing order id, raise an exception
       # you really shouldn't implement this until you get the order data. then you just use the validations
       # in that object to test if we can create this object
@@ -48,7 +71,7 @@ class Sogi::OrderCreator
 
       new_order.save
       new_order
-    end
+#    end
   end
 
 =begin

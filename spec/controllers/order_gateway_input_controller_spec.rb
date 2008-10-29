@@ -1,12 +1,16 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe OrderGatewayInputController do
+  self.use_transactional_fixtures = false
+
   before(:each) do
+    OutsideOrderAttribute.destroy_all
     @raw_xml = File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample.xml")
   end
 
-  def do_create
-    post 'create', :input_order_format => 'amazon', :body => @raw_xml
+  def do_create(body=nil)
+    body ||= @raw_xml
+    post 'create', :input_order_format => 'amazon', :body => body
   end
 
   it "should have the right routes" do
@@ -35,6 +39,7 @@ describe OrderGatewayInputController do
     assigns(:parser).should be_a_kind_of(Sogi::Parser::Amazon)
     assigns(:orders).should have_at_least(2).orders
     assigns(:errors).should have_at_most(0).errors
+    OutsideOrderAttribute.find_all_by_origin_order_identifier("050-1234567-1234568").should have_exactly(1).attribute
   end
 
   it "POST 'create' should respond with errors if the orders already exist" do
@@ -47,8 +52,13 @@ describe OrderGatewayInputController do
     assigns(:errors).should have_at_least(2).errors
   end
 
-  it "POST 'create' should respond with split response if some passed and some failed" do
-    pending "creating a fixture to test this scenario"
+  # it "POST 'create' should respond with split response if some passed and some failed" do
+  it "POST 'create' should respond with unprocessable response if some failed (even if some passed, they will rollback)" do
+    do_create(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_partial_failure.xml"))
+    response.code.should eql(unprocessable_entity="422")
+    assigns(:orders).should have_at_most(0).orders
+    assigns(:errors).should have_at_least(1).errors
+    OutsideOrderAttribute.find_all_by_origin_order_identifier("050-1234567-8327398").should have_exactly(0).attributes
   end
 
   it "'create' should respond with an error if an unknown parser is attempted" do
