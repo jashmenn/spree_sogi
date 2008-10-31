@@ -75,6 +75,17 @@ describe Sogi::Parser::Amazon do
     @line_item.shipping_tax.should eql(0.24)
   end
 
+  it "should have custom line item information" do
+    order             = @parser.orders[1]
+    line_item         = order.line_items.first
+   (custom_attributes = line_item.custom_attributes).should_not be_nil
+    custom_attributes.size.should eql(2)
+    custom_attributes.should have_key("FooCustomOneKey")
+    custom_attributes.should have_key("FooCustomTwoKey")
+    custom_attributes["FooCustomOneKey"].should eql("FooCustomOneValue")
+    custom_attributes["FooCustomTwoKey"].should eql("FooCustomTwoValue")
+  end
+
   it "should parse line item special instructions" do
     @line_item.gift_message.should eql("We love you mom!")
   end
@@ -82,6 +93,7 @@ describe Sogi::Parser::Amazon do
   it "should set the state according to the parsers instructions" do
     @order.initial_state.should eql('paid')
   end
+
 
 end
 

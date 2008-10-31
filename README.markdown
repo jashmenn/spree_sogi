@@ -101,3 +101,6 @@ MIGRATIONS TO ADD:
 NEW EXT:
  * add order_properties
  x
+
+added tracking numbers for line items, couldn't wait for spree shipping modules
+addded special instructions to particular line items

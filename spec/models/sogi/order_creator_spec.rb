@@ -144,6 +144,22 @@ describe Sogi::OrderCreator do
     item.origin_order_item_identifier .should eql("12345678901234")
   end
 
+  it "should record the custom line item information" do
+    # note: for now most custom data is put as a string into the line-items
+    # special instructions field. however, ideally this would be changed to a
+    # data-type for line items. for now, this is all i need, but don't be
+    # surprised when we add this in. its ok to change this test in that
+    # circumstance.
+
+    @order_creator.create_order(@parser.orders[1])
+    order = Order.find(:last)
+    line_items = order.line_items
+
+    line_items.should have_exactly(1).items
+    item = line_items.first
+    item.special_instructions.should eql("FooCustomOneKey: FooCustomOneValue, FooCustomTwoKey: FooCustomTwoValue")
+  end
+
   it "should store custom information such as origin_channel and origin_channel_id" do
     @order.origin_channel.should eql("amazon")
     @order.origin_account_identifier.should eql("My Store")
@@ -158,6 +174,7 @@ describe Sogi::OrderCreator do
     @order.properties.read_value(:origin_fulfillment_method).should eql("Ship")
     @order.properties.read_value(:origin_fulfillment_level).should eql("Standard")
   end
+
 
   it "should store the initial state as specified" do
     @order.state.should eql('paid')

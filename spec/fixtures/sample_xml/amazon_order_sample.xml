@@ -293,6 +293,14 @@
                 <AmazonOrderItemCode>12345678901234</AmazonOrderItemCode>
                 <SKU>1234</SKU>
                 <Title>Programming Perl, 3rd edition</Title>
+                <CustomizationInfo>
+                  <Type>FooCustomOneKey</Type>
+                  <Data>FooCustomOneValue</Data>
+                </CustomizationInfo>
+                <CustomizationInfo>
+                  <Type>FooCustomTwoKey</Type>
+                  <Data>FooCustomTwoValue</Data>
+                </CustomizationInfo>
                 <Quantity>1</Quantity>
                 <ProductTaxCode>1234</ProductTaxCode>
                 <ItemPrice>

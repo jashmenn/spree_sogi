@@ -75,6 +75,17 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
       end
       nil
     end
+
+    # returns hash key, values of custom attributes 
+    def custom_attributes
+      customs = {}
+      custom_infos = @document.search("/CustomizationInfo")
+      custom_infos.each do |elem|
+        customs[elem.at("/Type").inner_text] = elem.at("/Data").inner_text
+      end
+      customs
+    end
+
   end
 
 end
