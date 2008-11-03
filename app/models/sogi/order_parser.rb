@@ -38,7 +38,7 @@ class Sogi::OrderParser
     def value_of_attribute(xpath, attribute_name)
       element = @document.at(xpath)
       return nil unless element
-      element[attribute_name.downcase]
+      element[attribute_name]
     end
 
   end
@@ -168,7 +168,7 @@ class Sogi::OrderParser
 
   def body=(new_body)
     @body = new_body
-    @document = new_body ? Hpricot(new_body) : nil
+    @document = new_body ? Hpricot.XML(new_body) : nil
   end
 
   def orders
