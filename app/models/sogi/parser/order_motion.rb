@@ -1,3 +1,5 @@
+# still has much work todo, but should currently provide basic shipping information
+# more to come...
 class Sogi::Parser::OrderMotion < Sogi::OrderParser
   def orders_found_in
     "/OrderInformationResponse"
@@ -12,7 +14,6 @@ class Sogi::Parser::OrderMotion < Sogi::OrderParser
 
   # custom_order_attribute :origin_fulfillment_method, :fulfillment_method
   # custom_order_attribute :origin_fulfillment_level, :fulfillment_level
-
 
   define_order_methods_as do
 

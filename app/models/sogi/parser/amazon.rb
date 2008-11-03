@@ -19,7 +19,7 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
   attr_at_xpath :merchant_identifier, "/AmazonEnvelope/Header/MerchantIdentifier"
 
   custom_order_attribute :origin_fulfillment_method, :fulfillment_method
-  custom_order_attribute :origin_fulfillment_level, :fulfillment_level
+  # custom_order_attribute :origin_fulfillment_level, :fulfillment_level # becomes an actual mehtod
 
   set_order_state_to 'paid'
 
@@ -51,6 +51,7 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
     attr_at_xpath :shipping_zip,          "/FulfillmentData/Address/PostalCode"
     attr_at_xpath :shipping_country,      "/FulfillmentData/Address/CountryCode"
     attr_at_xpath :shipping_phone,        "/FulfillmentData/Address/PhoneNumber"
+
   end
 
   define_line_item_methods_as do

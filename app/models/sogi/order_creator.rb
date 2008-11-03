@@ -65,6 +65,7 @@ class Sogi::OrderCreator
         create_and_verify_outside_order_attributes(order, new_order)
         create_payment_information(order, new_order)
         create_order_billing_information(order, new_order)
+        create_order_ship_to_information(order, new_order)
         create_order_shipping_information(order, new_order)
         create_order_line_items(order, new_order)
         create_order_custom_data(order, new_order)
@@ -79,15 +80,6 @@ class Sogi::OrderCreator
       new_order
 #    end
   end
-
-=begin
-
-What to do w/ these? order custom?
-
-    attr_at_xpath :fulfillment_method,    "/FulfillmentData/FulfillmentMethod"
-    attr_at_xpath :fulfillment_level,     "/FulfillmentData/FulfillmentServiceLevel"
- 
-=end
 
   private
 
@@ -137,7 +129,7 @@ What to do w/ these? order custom?
       billing.save_without_validation
   end
 
-  def create_order_shipping_information(order, new_order)
+  def create_order_ship_to_information(order, new_order)
       # add shipping_information
       shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
       # state = State.find_or_create_by_name_and_country_id(order.shipping_state, shipping_country.id) # ... ?
@@ -157,6 +149,14 @@ What to do w/ these? order custom?
       new_order.address = shipping
       shipping.addressable = new_order # why do i have to do this?
       shipping.save
+  end
+
+  def create_order_shipping_information(order, new_order)
+    shipping_method = ShippingMethod.find_or_create_by_name(order.fulfillment_level)
+    shipping_method.shipping_calculator ||= "Sogi::NullShipping"
+    shipping_method.save
+    shipment = Shipment.create(:shipping_method_id => shipping_method.id, :order_id => new_order.id)
+    shipment.save
   end
 
   def create_order_line_items(parser_order, new_order)
