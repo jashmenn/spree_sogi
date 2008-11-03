@@ -35,14 +35,14 @@
 		<Shipment shipmentID="" transmissionID="">
 			<TotalCOGS>6.52</TotalCOGS>
 			<TotalLines>1</TotalLines>
-			<File fileSubCode="-1" fileNumber="1" fileName=""/>
-			<SubAgent code="" subAgentID=""/>
+            <File fileSubCode="-1" fileNumber="1" fileName=""></File>
+            <SubAgent code="" subAgentID=""></SubAgent>
 			<TotalUnits>1</TotalUnits>
 			<ShipDate>2006-02-09 14:47:00</ShipDate>
             <TrackingNumber>999999999999<TrackingNUmber>
 			<ShipmentNumber>16651-</ShipmentNumber>
 			<TotalWeight>0.00</TotalWeight>
-			<Cart controlNumber="" pickSequenceNumber=""/>
+            <Cart controlNumber="" pickSequenceNumber=""></Cart>
 		</Shipment>
 		<Method code="1" fulfillmentCode="GND" fulfillmentIndicator="" carrierServiceCode="13" carrierName="FedEx">FedEx Ground Residential</Method>
 		<ShipperName shipperID="14">q</ShipperName>

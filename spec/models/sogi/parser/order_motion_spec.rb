@@ -22,8 +22,7 @@ describe Sogi::Parser::Amazon do
   end
 
   it "should know about ship dates and they should be date objects" do
-    pending
-    @order.shipments.shipped_at.should eql("something")
+    @order.shipments[0].shipped_at.should eql("2006-02-09 14:47:00")
   end
 
   it "should know about tracking numbers" do
