@@ -153,7 +153,7 @@ class Sogi::OrderCreator
 
   def create_order_shipping_information(order, new_order)
     shipping_method = ShippingMethod.find_or_create_by_name(order.fulfillment_level)
-    shipping_method.shipping_calculator ||= "Sogi::NullShipping"
+    shipping_method.shipping_calculator ||= "Sogi::NullShipping" # todo, for now, punt on figuring this out. ideally read the shipping quantity from the channel
     shipping_method.save
     shipment = Shipment.create(:shipping_method_id => shipping_method.id, :order_id => new_order.id)
     shipment.save
