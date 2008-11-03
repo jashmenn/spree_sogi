@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderInformationResponse>
+	<OrderHeader>
+		<Division divisionID="1" website="">DRTV Division</Division>
+        <OrderID>12303837</OrderID>
+		<OriginType>2</OriginType>
+		<KeycodeDescription>Six Month Buyers</KeycodeDescription>
+        <KeycodeAdVersion></KeycodeAdVersion>
+        <OverwriteKeycode></OverwriteKeycode>
+		<Promotion>PROMO1</Promotion>
+		<TodayDay>1</TodayDay>
+		<TodayMonth>5</TodayMonth>
+		<TodayYear>2006</TodayYear>
+		<TodayDate>2006-05-01</TodayDate>
+		<Tax>0.00</Tax>
+		<NetAmount>0.00</NetAmount>
+		<UserDescription>No User</UserDescription>
+		<PIN>Unknown User</PIN>
+		<UserName>No User</UserName>
+        <WaitDate></WaitDate>
+        <LastPaidDate></LastPaidDate>
+		<OrderNumber>16651</OrderNumber>
+		<Keycode>A123</Keycode>
+		<KeyedDate>2005-06-20 14:25:00</KeyedDate>
+		<TotalDiscount>0.00</TotalDiscount>
+		<Balance>0.00</Balance>
+		<TotalPaid>0.00</TotalPaid>
+		<TotalAmount>0.00</TotalAmount>
+        <StoreCode></StoreCode>
+		<PaymentPlan paymentPlanID="0"/>
+        <CustomFields></CustomFields>
+		<OrderDate>2005-06-20 14:25:00</OrderDate>
+	</OrderHeader>
+	<ShippingInformation>
+		<Shipment shipmentID="" transmissionID="">
+			<TotalCOGS>6.52</TotalCOGS>
+			<TotalLines>1</TotalLines>
+			<File fileSubCode="-1" fileNumber="1" fileName=""/>
+			<SubAgent code="" subAgentID=""/>
+			<TotalUnits>1</TotalUnits>
+			<ShipDate>2006-02-09 14:47:00</ShipDate>
+            <TrackingNumber>999999999999<TrackingNUmber>
+			<ShipmentNumber>16651-</ShipmentNumber>
+			<TotalWeight>0.00</TotalWeight>
+			<Cart controlNumber="" pickSequenceNumber=""/>
+		</Shipment>
+		<Method code="1" fulfillmentCode="GND" fulfillmentIndicator="" carrierServiceCode="13" carrierName="FedEx">FedEx Ground Residential</Method>
+		<ShipperName shipperID="14">q</ShipperName>
+		<ShippingDocumentVersion>1</ShippingDocumentVersion>
+		<ShippingAmount>0.00</ShippingAmount>
+        <HandlingAmount></HandlingAmount>
+        <CarrierData></CarrierData>
+		<Address type="ShipTo">
+			<FullAddress>Ms Sun O'neil S
+1 main st, 2314
+Richmond Hill ON L4B 3M4
+Canada
+</FullAddress>
+			<FullName>Sun O'neil S</FullName>
+			<Company/>
+			<Title code="3" alphaCode="A">Ms</Title>
+			<Firstname>Sun</Firstname>
+			<MidInitial/>
+			<Lastname>O'neil S</Lastname>
+			<Street1>1 main st, 2314</Street1>
+			<Street2/>
+			<Address1>1 main st, 2314</Address1>
+			<Address2/>
+			<SubCity/>
+			<Apartment/>
+			<Building/>
+			<County/>
+			<City>Richmond Hill</City>
+			<ZIP>L4B 3M4</ZIP>
+			<TLD>CA</TLD>
+			<State>ON</State>
+			<Country>Canada</Country>
+			<Email/>
+			<FullPhone>+1/508/6557500</FullPhone>
+		</Address>
+	</ShippingInformation>
+	<OrderDetail>
+		<LineItem lineNumber="1" output="" parentLineNumber="0">
+			<ShipmentNumber shipmentID="1" thisShipment="False">16651-1</ShipmentNumber>
+			<LineCOGS>6.52</LineCOGS>
+			<UnitCOGS>6.52</UnitCOGS>
+			<ItemCode parentLineItemCode="">01-113</ItemCode>
+			<WarehouseReference>01-113</WarehouseReference>
+			<ProductTypeDescription>Harmony Line</ProductTypeDescription>
+			<ProductName>Driver</ProductName>
+			<Info/>
+			<ProductDescription>can you feel me on these driving things?</ProductDescription>
+			<UPCCode/>
+			<UnitOfMeasure/>
+			<PickLocation zone="" aisle="" shelf="" location="Loc1">Loc1</PickLocation>
+			<FulfillmentInstructions/>
+			<Quantity bonus="0">1</Quantity>
+			<Price priceType="U">0.00</Price>
+			<Tax taxPercent="0.00">0.00</Tax>
+			<ItemAttributes>
+				<AttributeValue attributeID="0"/>
+				<AttributeValue attributeID="1"/>
+				<AttributeValue attributeID="2"/>
+				<AttributeValue attributeID="3"/>
+				<AttributeValue attributeID="4"/>
+				<AttributeValue attributeID="5"/>
+				<AttributeValue attributeID="6"/>
+				<AttributeValue attributeID="7"/>
+				<AttributeValue attributeID="8"/>
+				<AttributeValue attributeID="9"/>
+				<AttributeValue attributeID="10"/>
+			</ItemAttributes>
+			<DimensionData>
+				<DimensionLabel1>Shaft Type</DimensionLabel1>
+				<DimensionLabel2>Shaft Flex</DimensionLabel2>
+				<DimensionLabel3>Grip Type</DimensionLabel3>
+				<DimensionValue1 code="1">Carbon Fiber</DimensionValue1>
+				<DimensionValue2 code="1">Ladies</DimensionValue2>
+				<DimensionValue3 code="3">L</DimensionValue3>
+			</DimensionData>
+			<TotalPrice>0.00</TotalPrice>
+			<UnitPrice>0.00</UnitPrice>
+			<EffectiveUnitPrice>0.00</EffectiveUnitPrice>
+			<LineStatus date="2/9/2006 2:47:00 PM" text="OK">40</LineStatus>
+			<LineDiscount>0.00</LineDiscount>
+			<TrackingNumber/>
+			<CustomFields/>
+			<SupplierItemCode supplierID="1">01-113</SupplierItemCode>
+		</LineItem>
+	</OrderDetail>
+	<Customer number="11229">
+		<Level/>
+		<Address type="BillTo">
+			<Company/>
+			<Title code="3" alphaCode="A">Ms</Title>
+			<FullAddress>Ms Sun O'neil S
+1 main st, 2314
+Richmond Hill ON L4B 3M4
+Canada
+</FullAddress>
+			<Firstname>Sun</Firstname>
+			<MidInitial/>
+			<Lastname>O'neil S</Lastname>
+			<Street1>1 main st, 2314</Street1>
+			<Street2/>
+			<Address1>1 main st, 2314</Address1>
+			<Address2/>
+			<SubCity/>
+			<Apartment/>
+			<Building/>
+			<County/>
+			<City>Richmond Hill</City>
+			<ZIP>L4B 3M4</ZIP>
+			<TLD>CA</TLD>
+			<State>ON</State>
+			<Email/>
+			<PhoneNumber>+1/508/6557500</PhoneNumber>
+		</Address>
+		<FlagData>
+			<Flag name="DoNotMailFlag">False</Flag>
+			<Flag name="NixieFlag">False</Flag>
+			<Flag name="BadDebtFlag">False</Flag>
+			<Flag name="DoNotRentFlag">False</Flag>
+			<Flag name="DoNotEmailFlag">False</Flag>
+			<Flag name="DoNotCallFlag">False</Flag>
+			<Flag/>
+			<Flag/>
+		</FlagData>
+		<CustomerStats>
+			<FirstOrder>-1</FirstOrder>
+		</CustomerStats>
+	</Customer>
+	<Payment type="0">
+		<CreditCardType>0</CreditCardType>
+		<CreditCardName/>
+		<CreditCardNumber/>
+		<CreditCardCCV/>
+		<CreditCardExpDate/>
+		<CreditCardAuthCode/>
+		<BankRoutingNumber/>
+		<BankAccountNumber/>
+		<CreditCardStartDate/>
+		<CreditCardIssueNumber/>
+	</Payment>
+</OrderInformationResponse>

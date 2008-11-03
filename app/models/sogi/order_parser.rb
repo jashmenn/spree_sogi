@@ -13,6 +13,13 @@ class Sogi::OrderParser
         value_of xpath
       end
     end
+
+    def attr_at_xpath_attribute(method_name, attribute, xpath)
+      define_method method_name do
+        value_of_attribute(xpath, attribute)
+      end
+    end
+
   end
 
   # helper methods for easy parsing of the document
@@ -27,6 +34,13 @@ class Sogi::OrderParser
       found_elem.inner_html
     end
     alias_method :v, :value_of
+
+    def value_of_attribute(xpath, attribute_name)
+      element = @document.at(xpath)
+      return nil unless element
+      element[attribute_name.downcase]
+    end
+
   end
 
 
@@ -35,6 +49,7 @@ class Sogi::OrderParser
     include XmlParsingInstanceMethods
     attr_accessor :document
 
+    # FAIL class variables used like this is wrong, not inheritable
     @@custom_attributes_and_instructions = {}
     @@initial_order_state = nil
     cattr_accessor :initial_order_state
@@ -62,10 +77,21 @@ class Sogi::OrderParser
       ret
     end
 
+    # todo, unify w/ above
+    def shipments
+      ret = []
+      elements = @document.search self.shipments_found_in
+      elements.each do |element| 
+        li = Shipment.new
+        li.document = element
+        ret << li
+      end
+      ret
+    end
+
     def initial_state
       self.class.initial_order_state
     end
-
 
     # stub methods
     def billing_email; end
@@ -87,6 +113,16 @@ class Sogi::OrderParser
     attr_accessor :document
   end
 
+  class Shipment
+    class << self
+      include XmlParsingClassMethods
+    end
+
+    include XmlParsingInstanceMethods
+    attr_accessor :document
+  end
+
+
   include XmlParsingInstanceMethods
   attr_accessor :body
   attr_accessor :document
@@ -105,6 +141,10 @@ class Sogi::OrderParser
 
     def define_line_item_methods_as(&block)
       LineItem.class_eval &block
+    end
+
+    def define_shipment_methods_as(&block)
+      Shipment.class_eval &block
     end
 
     def set_order_state_to(initial_state)
