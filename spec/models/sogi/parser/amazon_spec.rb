@@ -94,6 +94,31 @@ describe Sogi::Parser::Amazon do
     @order.initial_state.should eql('paid')
   end
 
+  describe "second amazon order" do
+    # had to test this order b/c it was failing in the parsing
+
+    before(:each) do
+      @parser = Sogi::Parser::Amazon.new
+      @parser.body = File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample_02.xml")
+      @parser.body.should_not be_nil
+      @parser.document.should_not be_nil
+      @order = @parser.orders[0]
+      @line_item = @order.line_items[0]
+    end
+
+    it "should have the right number of line items" do
+      @order.line_items.should have_exactly(1).line_item
+    end
+
+    it "should have line item product information" do
+      @line_item.sku.should eql("PR12340")
+      @line_item.title.should eql("Some long titled product (Non-CARB Compliant) #PR12340")
+      @line_item.price.should eql(99.95)
+    end
+
+
+  end
+
 
 end
 

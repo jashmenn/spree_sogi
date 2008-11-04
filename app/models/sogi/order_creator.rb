@@ -207,6 +207,7 @@ class Sogi::OrderCreator
     product = Product.create(:name => line_item.title, 
                              :master_price => line_item.price, 
                              :description => line_item.title)
+    product.save!
     product.variants.create(:product_id => product.id, :sku => line_item.sku, :price => line_item.price)
     product
   end

@@ -23,6 +23,8 @@ class OrderGatewayInputController < ApplicationController
       if @orders.size > 0
         format.xml  { render :status => :created }
       else
+        # todo, here send out an email!!!
+        @errors.each { |e| logger.fatal "OrderCreator Exception: #{e.class}: #{e.message}\n\t#{e.backtrace.join("\n\t")}" }
         format.xml  { render :status => :unprocessable_entity }
       end
     end
