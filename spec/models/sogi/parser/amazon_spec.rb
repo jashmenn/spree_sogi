@@ -116,6 +116,10 @@ describe Sogi::Parser::Amazon do
       @line_item.price.should eql(99.95)
     end
 
+    it "should strip out non-word characters from the state abbreviations" do
+      @order.shipping_state.should eql("Wa")
+    end
+
 
   end
 

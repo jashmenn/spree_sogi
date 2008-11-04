@@ -47,10 +47,13 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
     attr_at_xpath :shipping_address_one,  "/FulfillmentData/Address/AddressFieldOne"
     attr_at_xpath :shipping_address_two,  "/FulfillmentData/Address/AddressFieldTwo" # does this even exist?
     attr_at_xpath :shipping_city,         "/FulfillmentData/Address/City"
-    attr_at_xpath :shipping_state,        "/FulfillmentData/Address/StateOrRegion"
     attr_at_xpath :shipping_zip,          "/FulfillmentData/Address/PostalCode"
     attr_at_xpath :shipping_country,      "/FulfillmentData/Address/CountryCode"
     attr_at_xpath :shipping_phone,        "/FulfillmentData/Address/PhoneNumber"
+
+    def shipping_state
+      v("/FulfillmentData/Address/StateOrRegion").gsub(/\W/, '')
+    end
 
   end
 
