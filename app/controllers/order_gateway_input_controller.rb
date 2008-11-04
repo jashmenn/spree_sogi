@@ -20,8 +20,12 @@ class OrderGatewayInputController < ApplicationController
     respond_to do |format|
       # if @order.size == @parser.orders.size THEN we give success? no. orders will always be 0 if
       # changed this around, so no more multiple errors unless the error is 'already created'
+
       if @orders.size > 0
         format.xml  { render :status => :created }
+      elsif contains_only_existing_order_errors?(@errors)
+        @errors.each { |e| logger.warn "OrderCreator exisiting order: #{e.class}: #{e.message}" }
+        format.xml  { render :status => :accepted } # 202 :accepted
       else
         # todo, here send out an email!!!
         @errors.each { |e| logger.fatal "OrderCreator Exception: #{e.class}: #{e.message}\n\t#{e.backtrace.join("\n\t")}" }
@@ -31,6 +35,13 @@ class OrderGatewayInputController < ApplicationController
   end
 
   def show_error(exception); render :xml => exception, :status => :unprocessable_entity; end
+
+  private 
+  def contains_only_existing_order_errors?(errors)
+    return false unless errors && errors.size > 0
+    return false if errors.detect {|e| !e.kind_of?(Sogi::OrderCreator::OrderAlreadyExistsError) } # if you find an error that is not this, then false
+    return true
+  end
 
 end
 
