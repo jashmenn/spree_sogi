@@ -213,7 +213,7 @@ class Sogi::OrderCreator
   end
 
   def find_or_create_product_for(line_item)
-    products = Product.by_sku line_item.sku
+    products = Product.by_exact_sku line_item.sku
     if products.size > 0
       return products.first
     else

@@ -53,6 +53,10 @@ class SogiExtension < Spree::Extension
         end
       end
     end
+
+    Product.class_eval do
+      named_scope :by_exact_sku, lambda {|sku| { :include => :variants, :conditions => ["variants.sku = ?", sku]}}
+    end
   end
   
   def deactivate
