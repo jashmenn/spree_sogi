@@ -20,6 +20,7 @@ class OrderGatewayInputController < ApplicationController
     respond_to do |format|
       # if @order.size == @parser.orders.size THEN we give success? no. orders will always be 0 if
       # changed this around, so no more multiple errors unless the error is 'already created'
+      # todo, we still need to check for partial success
 
       if @orders.size > 0
         format.xml  { render :status => :created }
