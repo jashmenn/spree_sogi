@@ -96,7 +96,7 @@ class Sogi::OrderCreator
     end
 
     new_order.creditcard_payment = payment
-    payment.save
+    payment.save!
   end
 
 
@@ -136,9 +136,10 @@ class Sogi::OrderCreator
       state = State.find_by_name(order.shipping_state) || State.find_by_abbr(order.shipping_state)
     
       first, last = order.shipping_name.split(/ /, 2)
+      shipping_phone = order.shipping_phone || "000-000-0000"
       shipping = Address.create(:firstname => first, 
                                 :lastname => last, 
-                                :phone => order.shipping_phone, 
+                                :phone => shipping_phone, 
                                 :country_id => shipping_country.id,
                                 :address1 => order.shipping_address_one,
                                 :address2 => order.shipping_address_two,
@@ -148,15 +149,15 @@ class Sogi::OrderCreator
                                )
       new_order.address = shipping
       shipping.addressable = new_order # why do i have to do this?
-      shipping.save
+      shipping.save!
   end
 
   def create_order_shipping_information(order, new_order)
     shipping_method = ShippingMethod.find_or_create_by_name(order.fulfillment_level)
     shipping_method.shipping_calculator ||= "Sogi::NullShipping" # todo, for now, punt on figuring this out. ideally read the shipping quantity from the channel
-    shipping_method.save
+    shipping_method.save!
     shipment = Shipment.create(:shipping_method_id => shipping_method.id, :order_id => new_order.id)
-    shipment.save
+    shipment.save!
   end
 
   def create_order_line_items(parser_order, new_order)
@@ -235,7 +236,7 @@ class Sogi::OrderCreator
       "Order origin_id #{porder.order_id} for #{@parser.origin_channel} account #{@parser.merchant_identifier} already exists"
     end
     ooa.order = new_order
-    ooa.save
+    ooa.save!
     ooa
   end
 
