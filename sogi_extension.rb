@@ -4,6 +4,13 @@ $:.unshift File.dirname(__FILE__) + "/lib"
 require 'extensions/object.rb'
 require 'extensions/activerecord/find_or_do.rb'
 
+# If you want to handle errors with a custom function, define the following in config/environment.rb
+#
+#   SogiExtension.class_eval do
+#     def on_importing_error(order)
+#       puts order
+#     end
+#   end
 class SogiExtension < Spree::Extension
   version "1.0"
   description "Spree Order Gateway Input (SOGI) is a Spree extension to accept orders via a web-service."
@@ -12,6 +19,17 @@ class SogiExtension < Spree::Extension
   define_routes do |map|
     map.sogi_orders_create '/sogi/orders/create/:input_order_format.:format', :controller => "order_gateway_input", :action => "create"
   end
+
+  # TODO define this callback if no-one else has, the below code doesn't work
+  # and overrides config/environment.rb however we've got to have a callback
+  # here. for now, if anyone doesn't define this they'll get a diff error that
+  # this method is undefined
+  # 
+  # unless self.respond_to?(:on_importing_error)
+  #   def self.on_importing_error(message)
+  #     ActiveRecord::Base.logger.fatal "There was a serious problem importing. You'd better check it out: #{message}"
+  #   end
+  # end
 
   def activate
     # admin.tabs.add "Sogi", "/admin/sogi", :after => "Layouts", :visibility => [:all]
@@ -57,6 +75,7 @@ class SogiExtension < Spree::Extension
     Product.class_eval do
       named_scope :by_exact_sku, lambda {|sku| { :include => :variants, :conditions => ["variants.sku = ?", sku]}}
     end
+
   end
   
   def deactivate
