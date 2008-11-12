@@ -273,14 +273,14 @@
             <OrderPostedDate>2002-05-01T15:21:49-08:00</OrderPostedDate>
             <BillingData>
               <BuyerEmailAddress></BuyerEmailAddress>
-                <BuyerName>Joe Smith</BuyerName>
+                <BuyerName></BuyerName>
                 <BuyerPhoneNumber>206-555-1234</BuyerPhoneNumber>
             </BillingData>
             <FulfillmentData>
                 <FulfillmentMethod></FulfillmentMethod>
                 <FulfillmentServiceLevel></FulfillmentServiceLevel>
                 <Address>
-                    <Name>Joe Smith</Name>
+                    <Name></Name>
                     <AddressFieldOne>1234 Main St.</AddressFieldOne>
                     <City>Seattle</City>
                     <StateOrRegion>Washington</StateOrRegion>

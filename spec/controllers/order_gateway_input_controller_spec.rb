@@ -47,18 +47,23 @@ describe OrderGatewayInputController do
     response.should be_kind_of_success
 
     do_create
-    response.should_not be_kind_of_success
+    response.code.should eql(accepted="202")
     assigns(:orders).should have_at_most(0).orders
     assigns(:errors).should have_at_least(2).errors
   end
 
   # it "POST 'create' should respond with split response if some passed and some failed" do
+  # what causes this feed to fail? missing email addresses etc
   it "POST 'create' should respond with unprocessable response if some failed (even if some passed, they will rollback)" do
+    OutsideOrderAttribute.find_all_by_origin_order_identifier("050-1234567-8327398").should have_exactly(0).attributes
+    OutsideOrderAttribute.find_all_by_origin_order_identifier("902-1030835-1234560").should have_exactly(0).attributes
+ 
     do_create(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_partial_failure.xml"))
     response.code.should eql(unprocessable_entity="422")
     assigns(:orders).should have_at_most(0).orders
     assigns(:errors).should have_at_least(1).errors
     OutsideOrderAttribute.find_all_by_origin_order_identifier("050-1234567-8327398").should have_exactly(0).attributes
+    OutsideOrderAttribute.find_all_by_origin_order_identifier("902-1030835-1234560").should have_exactly(0).attributes
   end
 
   it "'create' should respond with an error if an unknown parser is attempted" do

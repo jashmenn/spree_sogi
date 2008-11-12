@@ -107,10 +107,13 @@ class Sogi::OrderCreator
       opts[:use_shipping_if_missing_info] ||= true # todo, actually use this value
 
       shipping_country = Country.find_by_iso(order.billing_country || order.shipping_country) || Country.find(Spree::Config[:default_country_id])
-      state = State.find_by_name(order.billing_state || order.shipping_state) || State.find_by_abbr(order.billing_state || order.shipping_state)
+      state = State.find_by_name(order.billing_state || order.shipping_state) ||  # todo this is getting uglier by the minute
+              State.find_by_abbr(order.billing_state || order.shipping_state) ||
+              State.find_by_name_normalized(order.billing_state ? order.billing_state.gsub(/\W/, '').downcase : order.shipping_state ? order.shipping_state.gsub(/\W/, '').downcase : nil) 
 
       # add billing information
       first, last = order.billing_name.split(/ /, 2)
+      last = first unless last # some people just give a single name
       billing = Address.create(:firstname  => first,
       :lastname                            => last,
       :phone                               => order.billing_phone_number,
@@ -133,9 +136,12 @@ class Sogi::OrderCreator
       # add shipping_information
       shipping_country = Country.find_by_iso(order.shipping_country) || Country.find(Spree::Config[:default_country_id])
       # state = State.find_or_create_by_name_and_country_id(order.shipping_state, shipping_country.id) # ... ?
-      state = State.find_by_name(order.shipping_state) || State.find_by_abbr(order.shipping_state)
+      state = State.find_by_name(order.shipping_state) ||  # todo cleanup
+              State.find_by_abbr(order.shipping_state) || 
+              State.find_by_name_normalized(order.shipping_state ? order.shipping_state.gsub(/\W/, '').downcase : nil) 
     
       first, last = order.shipping_name.split(/ /, 2)
+      last = first unless last # some people just give a single name
       shipping_phone = order.shipping_phone || "000-000-0000"
       shipping = Address.create(:firstname => first, 
                                 :lastname => last, 

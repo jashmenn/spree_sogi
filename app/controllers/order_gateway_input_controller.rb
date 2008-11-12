@@ -22,7 +22,7 @@ class OrderGatewayInputController < ApplicationController
       # changed this around, so no more multiple errors unless the error is 'already created'
       # todo, we still need to check for partial success
 
-      if @orders.size > 0
+      if @orders.size > 0 && @errors.size < 1 
         format.xml  { render :status => :created }
       elsif contains_only_existing_order_errors?(@errors)
         @errors.each { |e| logger.warn "OrderCreator exisiting order: #{e.class}: #{e.message}" }

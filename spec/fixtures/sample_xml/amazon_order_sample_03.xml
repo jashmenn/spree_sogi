@@ -2,44 +2,44 @@
 <AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
 <Header>
 <DocumentVersion>1.01</DocumentVersion>
-<MerchantIdentifier>M_YOUR_KEY</MerchantIdentifier>
+<MerchantIdentifier>M_SITE_TOKEN</MerchantIdentifier>
 </Header>
 <MessageType>OrderReport</MessageType>
 <Message>
 <MessageID>1</MessageID>
 <OrderReport>
-<AmazonOrderID>123-1234857-2384747</AmazonOrderID>
-<AmazonSessionID>108-9237847-9384778</AmazonSessionID>
-<OrderDate>2008-11-03T12:32:46-08:00</OrderDate>
-<OrderPostedDate>2008-11-03T12:32:46-08:00</OrderPostedDate>
+<AmazonOrderID>105-9237283-1290123</AmazonOrderID>
+<AmazonSessionID>105-9237283-1290123</AmazonSessionID>
+<OrderDate>2008-11-10T02:58:07-08:00</OrderDate>
+<OrderPostedDate>2008-11-10T02:58:07-08:00</OrderPostedDate>
 <BillingData>
-<BuyerEmailAddress>foo@bar.net</BuyerEmailAddress>
-<BuyerName>WILLIAM A. POOBAR JR.</BuyerName>
-<BuyerPhoneNumber>123-456-7890</BuyerPhoneNumber>
+<BuyerEmailAddress>email@vdomain.net</BuyerEmailAddress>
+<BuyerName>WILLIAM A. FOOBAR JR.</BuyerName>
+<BuyerPhoneNumber>123 123-1234</BuyerPhoneNumber>
 </BillingData>
 <FulfillmentData>
 <FulfillmentMethod>Ship</FulfillmentMethod>
 <FulfillmentServiceLevel>Standard</FulfillmentServiceLevel>
 <Address>
-<Name>FOO P BAR</Name>
-<AddressFieldOne>98 NORTH 72ND STREET</AddressFieldOne>
-<City>CHEAPPORT</City>
-<StateOrRegion>Wa.</StateOrRegion>
-<PostalCode>11520</PostalCode>
+<Name>WILLIAM A. FOOBAR JR.</Name>
+<AddressFieldOne>1 apple st</AddressFieldOne>
+<City>BROOKLYN</City>
+<StateOrRegion>NEW YORK</StateOrRegion>
+<PostalCode>11215</PostalCode>
 <CountryCode>US</CountryCode>
-<PhoneNumber>123-348-9877</PhoneNumber>
+<PhoneNumber>123 123-1234</PhoneNumber>
 </Address>
 </FulfillmentData>
 <Item>
-<AmazonOrderItemCode>12384738398397</AmazonOrderItemCode>
-<SKU>PR12340</SKU>
-<Title>Some long titled product (Non-CARB Compliant) #PR12340</Title>
+<AmazonOrderItemCode>39238747834847</AmazonOrderItemCode>
+<SKU>THESKU</SKU>
+<Title>The title</Title>
 <Quantity>1</Quantity>
 <ProductTaxCode>A_GEN_TAX</ProductTaxCode>
 <ItemPrice>
 <Component>
 <Type>Principal</Type>
-<Amount currency="USD">99.95</Amount>
+<Amount currency="USD">69.95</Amount>
 </Component>
 <Component>
 <Type>Shipping</Type>
@@ -57,14 +57,14 @@
 <ItemFees>
 <Fee>
 <Type>Commission</Type>
-<Amount currency="USD">-13.18</Amount>
+<Amount currency="USD">-9.58</Amount>
 </Fee>
 </ItemFees>
 <ItemTaxData>
 <TaxJurisdictions>
-<TaxLocationCode>983847489</TaxLocationCode>
-<City>CHEAPPORT</City>
-<County>FASSU</County>
+<TaxLocationCode>123938378</TaxLocationCode>
+<City>KINGS</City>
+<County>KINGS</County>
 <State>NY</State>
 </TaxJurisdictions>
 <TaxableAmounts>
@@ -74,15 +74,15 @@
 <State currency="USD">0.00</State>
 </TaxableAmounts>
 <NonTaxableAmounts>
-<District currency="USD">99.95</District>
-<City currency="USD">0.00</City>
-<County currency="USD">99.95</County>
-<State currency="USD">99.95</State>
+<District currency="USD">69.95</District>
+<City currency="USD">69.95</City>
+<County currency="USD">0.00</County>
+<State currency="USD">69.95</State>
 </NonTaxableAmounts>
 <ZeroRatedAmounts>
 <District currency="USD">0.00</District>
-<City currency="USD">99.95</City>
-<County currency="USD">0.00</County>
+<City currency="USD">0.00</City>
+<County currency="USD">69.95</County>
 <State currency="USD">0.00</State>
 </ZeroRatedAmounts>
 <TaxCollectedAmounts>
@@ -100,9 +100,9 @@
 </ItemTaxData>
 <ShippingTaxData>
 <TaxJurisdictions>
-<TaxLocationCode>983273738</TaxLocationCode>
-<City>CHEAPORT</City>
-<County>FASSU</County>
+<TaxLocationCode>330472010</TaxLocationCode>
+<City>KINGS</City>
+<County>KINGS</County>
 <State>NY</State>
 </TaxJurisdictions>
 <TaxableAmounts>
@@ -113,14 +113,14 @@
 </TaxableAmounts>
 <NonTaxableAmounts>
 <District currency="USD">9.95</District>
-<City currency="USD">0.00</City>
-<County currency="USD">9.95</County>
+<City currency="USD">9.95</City>
+<County currency="USD">0.00</County>
 <State currency="USD">9.95</State>
 </NonTaxableAmounts>
 <ZeroRatedAmounts>
 <District currency="USD">0.00</District>
-<City currency="USD">9.95</City>
-<County currency="USD">0.00</County>
+<City currency="USD">0.00</City>
+<County currency="USD">9.95</County>
 <State currency="USD">0.00</State>
 </ZeroRatedAmounts>
 <TaxCollectedAmounts>

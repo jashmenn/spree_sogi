@@ -120,6 +120,27 @@ describe Sogi::Parser::Amazon do
       @order.shipping_state.should eql("Wa")
     end
 
+    it "should have billing information" do
+      @order.billing_name.should eql("WILLIAM A. POOBAR JR.")
+    end
+
+  end
+
+  describe "third amazon order" do
+
+    before(:each) do
+        @parser = Sogi::Parser::Amazon.new
+        @parser.body = File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample_03.xml")
+        @parser.body.should_not be_nil
+        @parser.document.should_not be_nil
+        @order = @parser.orders[0]
+        @line_item = @order.line_items[0]
+      end
+
+      it "should have name information" do
+        @order.billing_name.should eql("WILLIAM A. FOOBAR JR.")
+        @order.shipping_name.should eql("WILLIAM A. FOOBAR JR.")
+      end
 
   end
 
