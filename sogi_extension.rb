@@ -80,6 +80,17 @@ class SogiExtension < Spree::Extension
       named_scope :by_exact_sku, lambda {|sku| { :include => :variants, :conditions => ["variants.sku = ?", sku]}}
     end
 
+    State.class_eval do
+      def normalized_name
+        name.gsub(/\W/, '').downcase
+      end
+
+      def normalize_name!
+        self.name_normalized = normalized_name
+        self.save
+      end
+    end
+
   end
   
   def deactivate
