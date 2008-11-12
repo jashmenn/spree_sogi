@@ -25,11 +25,15 @@ class SogiExtension < Spree::Extension
   # here. for now, if anyone doesn't define this they'll get a diff error that
   # this method is undefined
   # 
-  # unless self.respond_to?(:on_importing_error)
-  #   def self.on_importing_error(message)
-  #     ActiveRecord::Base.logger.fatal "There was a serious problem importing. You'd better check it out: #{message}"
-  #   end
-  # end
+  # SORRY! HACK HACK. AmazonOrderMailer will NOT exist for everyone. However I
+  # have to get this done. Someone please submit a patch for good callbacks in
+  # this case.
+  unless self.respond_to?(:on_importing_error)
+    def self.on_importing_error(message)
+      ActiveRecord::Base.logger.fatal "There was a serious problem importing. You'd better check it out: #{message}"
+      AmazonOrdersMailer.deliver_error(message)
+    end
+  end
 
   def activate
     # admin.tabs.add "Sogi", "/admin/sogi", :after => "Layouts", :visibility => [:all]
