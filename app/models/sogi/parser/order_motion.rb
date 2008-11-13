@@ -27,6 +27,7 @@ class Sogi::Parser::OrderMotion < Sogi::OrderParser
 
     attr_at_xpath :order_id,              "/OrderHeader/OrderNumber"
     attr_at_xpath :alt_id,                "/OrderHeader/OrderID"
+#     attr_at_xpath :ordered_at,            "/OrderDate"
 
   #   attr_at_xpath :ordered_at,            "/OrderDate"
   #   attr_at_xpath :posted_at,             "/OrderPostedDate"

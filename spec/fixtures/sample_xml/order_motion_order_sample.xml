@@ -26,7 +26,7 @@
 		<Balance>0.00</Balance>
 		<TotalPaid>0.00</TotalPaid>
 		<TotalAmount>0.00</TotalAmount>
-        <StoreCode></StoreCode>
+        <StoreCode>AbcFoo</StoreCode>
 		<PaymentPlan paymentPlanID="0"/>
         <CustomFields></CustomFields>
 		<OrderDate>2005-06-20 14:25:00</OrderDate>
