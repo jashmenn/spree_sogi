@@ -150,12 +150,12 @@
                 <AmazonOrderItemCode>19284375755858</AmazonOrderItemCode>
                 <SKU>5678</SKU>
                 <Title>Programming Ruby, 3rd edition</Title>
-                <Quantity>1</Quantity>
+                <Quantity>2</Quantity>
                 <ProductTaxCode>1234</ProductTaxCode>
                 <ItemPrice>
                     <Component>
 	                <Type>Principal</Type>
-	                <Amount currency="USD">10.00</Amount>
+	                <Amount currency="USD">22.22</Amount>
                     </Component>
                     <Component>
 	                <Type>Shipping</Type>

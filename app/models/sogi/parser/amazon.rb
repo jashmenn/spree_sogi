@@ -64,8 +64,18 @@ class Sogi::Parser::Amazon < Sogi::OrderParser
     attr_at_xpath :tax_code,      "/ProductTaxCode"
     attr_at_xpath :gift_message,  "/GiftMessageText"
 
+
+    # NOTE: this is unexpected. you would think the individual line item would
+    # have the price. but amazon doesn't send the individual item price they
+    # send the total amount of item_price * quantity 
+    # 
+    # its totally unexpected, but this is the way it is.
+    def price
+      total_price = price_method("Principal")
+      individual_price = (total_price / quantity).to_f
+    end
+
     def quantity       ; v("/Quantity").to_i         ; end
-    def price          ; price_method("Principal")   ; end
     def shipping_price ; price_method("Shipping")    ; end
     def tax            ; price_method("Tax")         ; end
     def shipping_tax   ; price_method("ShippingTax") ; end

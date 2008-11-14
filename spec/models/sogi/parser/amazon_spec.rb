@@ -75,6 +75,14 @@ describe Sogi::Parser::Amazon do
     @line_item.shipping_tax.should eql(0.24)
   end
 
+  it "should parse line items multiple quantities properly" do
+    multiple = @order.line_items[1]
+    multiple.price.should eql(11.11) # note this
+    multiple.shipping_price.should eql(3.49)
+    multiple.tax.should eql(1.29)
+    multiple.shipping_tax.should eql(0.24)
+  end
+
   it "should have custom line item information" do
     order             = @parser.orders[1]
     line_item         = order.line_items.first
