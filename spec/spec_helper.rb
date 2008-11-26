@@ -35,6 +35,12 @@ ActionController::TestResponse.class_eval do
   end
 end
 
+Spree::PaymentGateway.class_eval do
+  def authorize
+    true
+  end
+end
+
 Spec::Runner.configure do |config|
   config.use_transactional_fixtures = true
   # config.use_instantiated_fixtures  = false
