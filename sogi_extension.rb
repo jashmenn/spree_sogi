@@ -29,9 +29,9 @@ class SogiExtension < Spree::Extension
   # have to get this done. Someone please submit a patch for good callbacks in
   # this case.
   unless self.respond_to?(:on_importing_error)
-    def self.on_importing_error(message)
-      ActiveRecord::Base.logger.fatal "There was a serious problem importing. You'd better check it out: #{message}"
-      AmazonOrdersMailer.deliver_error(message)
+    def self.on_importing_error(subject, message=nil)
+      ActiveRecord::Base.logger.fatal "There was a serious problem importing. You'd better check it out: #{subject} #{message}"
+      AmazonOrdersMailer.deliver_error(subject, message)
     end
   end
 

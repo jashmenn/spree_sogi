@@ -28,7 +28,8 @@ class OrderGatewayInputController < ApplicationController
         @errors.each { |e| logger.warn "OrderCreator exisiting order: #{e.class}: #{e.message}" }
         format.xml  { render :status => :accepted } # 202 :accepted
       else
-        SogiExtension.on_importing_error("a problem, todo add more info") # if SogiExtension.respond_to?(:on_importing_error) 
+        error_message = @errors.inject("") { |memo,e| memo << "OrderCreator Exception: #{e.class}: #{e.message}\n\t#{e.backtrace.join("\n\t")}\n"; memo }
+        SogiExtension.on_importing_error("a problem, todo add more info", error_message) # if SogiExtension.respond_to?(:on_importing_error) 
         @errors.each { |e| logger.fatal "OrderCreator Exception: #{e.class}: #{e.message}\n\t#{e.backtrace.join("\n\t")}" }
         format.xml  { render :status => :unprocessable_entity }
       end
