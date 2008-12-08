@@ -23,6 +23,7 @@ describe Sogi::OrderCreator do
     @order_creator = Sogi::OrderCreator.new(:origin_account_short_name => "my_test_store", :origin_account_transaction_identifier => "123456789")
     @order_creator.parser = @parser =  Sogi::Parser::Amazon.new(File.read(SOGI_FIXTURES_PATH + "/sample_xml/amazon_order_sample.xml"))
     @order = @order_creator.create_order(@parser.orders[0]) # just create the inital order so we can test it
+    @default_tax_category = TaxCategory.create(:name => "default", :description => "default tax category")
    end
 
   it "should have the objects we want" do
@@ -110,6 +111,9 @@ describe Sogi::OrderCreator do
     product.should_not be_nil
     product.name.should eql(line_item.title)
     product.master_price.should eql(line_item.price)
+
+    product.tax_category.should_not be_nil
+    product.tax_category.id.should eql(@default_tax_category.id)
   end
 
   it "should find_or_create a line-item's product appropriately" do

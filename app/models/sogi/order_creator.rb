@@ -211,9 +211,11 @@ class Sogi::OrderCreator
 
   # does this method belong here? maybe not
   def create_product_for(line_item)
+    default_tax_category = TaxCategory.find_by_name("default")
     product = Product.create(:name => line_item.title, 
                              :master_price => line_item.price, 
-                             :description => line_item.title)
+                             :description => line_item.title,
+                             :tax_category_id => default_tax_category ? default_tax_category.id : nil)
     product.save!
     product.variants.create(:product_id => product.id, :sku => line_item.sku, :price => line_item.price)
     product
