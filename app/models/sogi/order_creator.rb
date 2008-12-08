@@ -69,6 +69,7 @@ class Sogi::OrderCreator
         create_order_shipping_information(order, new_order)
         create_order_line_items(order, new_order)
         create_order_custom_data(order, new_order)
+        create_order_tax_data(order, new_order)
 
         new_order.state = order.initial_state if order.initial_state 
       rescue => e
@@ -219,6 +220,10 @@ class Sogi::OrderCreator
     product.save!
     product.variants.create(:product_id => product.id, :sku => line_item.sku, :price => line_item.price)
     product
+  end
+
+  def create_order_tax_data(order, new_order)
+    # todo
   end
 
   def find_or_create_product_for(line_item)
