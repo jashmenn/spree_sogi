@@ -127,6 +127,9 @@ class Sogi::XmlOrderParser
   attr_accessor :body
   attr_accessor :document
 
+  # TODO - this "meta programming" definitely will NOT work b/c your overriding
+  # methods in the actual parent class Order and LineItem etc. You need to
+  # generate a subclass and set methods there (hint: use the metaclass)
   class << self
     include XmlParsingClassMethods
 
