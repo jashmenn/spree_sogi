@@ -1,6 +1,6 @@
 # still has much work todo, but should currently provide basic shipping information
 # more to come...
-class Sogi::Parser::OrderMotion < Sogi::OrderParser
+class Sogi::Parser::OrderMotion < Sogi::XmlOrderParser
   def orders_found_in
     "/OrderInformationResponse"
   end

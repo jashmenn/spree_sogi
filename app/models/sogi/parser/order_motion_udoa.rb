@@ -4,7 +4,7 @@
 # you need it.
 #
 # this class currently unused, may be deleted
-class Sogi::Parser::OrderMotionUDOA < Sogi::OrderParser
+class Sogi::Parser::OrderMotionUDOA < Sogi::XmlOrderParser
   # def orders_found_in
   #   "/OrderInformationResponse"
   # end
